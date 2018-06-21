@@ -57,7 +57,7 @@ INSERT INTO usuarios (nomecomp, bl, email, password) values ('paulo henrique bez
 
 CREATE TABLE projetos(
 projectid INT NOT NULL AUTO_INCREMENT,
-clienteid INT NOT NULL,
+nomecliente VARCHAR(60) NOT NULL,
 area VARCHAR(20) NOT NULL,
 cidade VARCHAR(50) NOT NULL,
 uf VARCHAR(2) NOT NULL,

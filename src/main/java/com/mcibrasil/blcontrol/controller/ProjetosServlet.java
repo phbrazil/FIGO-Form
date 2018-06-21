@@ -5,7 +5,6 @@
  */
 package com.mcibrasil.blcontrol.controller;
 
-import com.mcibrasil.blcontrol.dao.ProjetosDAO;
 import com.mcibrasil.blcontrol.model.Propostas;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author paulo.bezerra
  */
-@WebServlet(name = "PropostasServlet", urlPatterns = {"/PropostasServlet"})
-public class PropostasServlet extends HttpServlet {
+@WebServlet(name = "ProjetosServlet", urlPatterns = {"/ProjetosServlet"})
+public class ProjetosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,13 +46,13 @@ public class PropostasServlet extends HttpServlet {
         String questao10 = request.getParameter("questao10");
         String questao11 = request.getParameter("questao11");
 
-        Propostas propostas = new Propostas(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
+       // Projetos propostas = new Propostas(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
 
         com.mcibrasil.blcontrol.dao.PropostasDAO gravarproposta = new com.mcibrasil.blcontrol.dao.PropostasDAO();
-   
-        gravarproposta.GravarProposta(propostas);
 
-        propostas = null;
+       // gravarproposta.GravarProposta(propostas);
+
+        //projetos = null;
         
         request.getRequestDispatcher("Home.jsp").forward(request, response);
 

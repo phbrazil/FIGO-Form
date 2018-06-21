@@ -15,7 +15,6 @@
                 document.getElementById('rua').value = ("");
                 document.getElementById('bairro').value = ("");
                 document.getElementById('cidade').value = ("");
-                document.getElementById('uf').value = ("");
             }
 
             function meu_callback(conteudo) {
@@ -24,7 +23,6 @@
                     document.getElementById('rua').value = (conteudo.logradouro);
                     document.getElementById('bairro').value = (conteudo.bairro);
                     document.getElementById('cidade').value = (conteudo.localidade);
-                    document.getElementById('uf').value = (conteudo.uf);
                 } //end if.
                 else {
                     //CEP não Encontrado.
@@ -51,7 +49,6 @@
                         document.getElementById('rua').value = "...";
                         document.getElementById('bairro').value = "...";
                         document.getElementById('cidade').value = "...";
-                        document.getElementById('uf').value = "...";
 
                         //Cria um elemento javascript.
                         var script = document.createElement('script');

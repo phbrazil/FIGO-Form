@@ -6,7 +6,7 @@
 package com.mcibrasil.blcontrol.controller;
 
 import com.mcibrasil.blcontrol.dao.ProjetosDAO;
-import com.mcibrasil.blcontrol.model.Propostas;
+import com.mcibrasil.blcontrol.model.ClientMapping;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author paulo.bezerra
  */
-@WebServlet(name = "PropostasServlet", urlPatterns = {"/PropostasServlet"})
-public class PropostasServlet extends HttpServlet {
+@WebServlet(name = "ClientMapping", urlPatterns = {"/ClientMappingServlet"})
+public class ClientMappingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,13 +47,13 @@ public class PropostasServlet extends HttpServlet {
         String questao10 = request.getParameter("questao10");
         String questao11 = request.getParameter("questao11");
 
-        Propostas propostas = new Propostas(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
+        ClientMapping clientmapping = new ClientMapping(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
 
-        com.mcibrasil.blcontrol.dao.PropostasDAO gravarproposta = new com.mcibrasil.blcontrol.dao.PropostasDAO();
+        com.mcibrasil.blcontrol.dao.ClientMappingDAO gravarproposta = new com.mcibrasil.blcontrol.dao.ClientMappingDAO();
    
-        gravarproposta.GravarProposta(propostas);
+        gravarproposta.GravarClientMapping(clientmapping);
 
-        propostas = null;
+        clientmapping = null;
         
         request.getRequestDispatcher("Home.jsp").forward(request, response);
 

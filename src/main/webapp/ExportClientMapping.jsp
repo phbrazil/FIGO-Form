@@ -44,7 +44,7 @@
 
             %>
             <tr>
-                    <td><%=propostas.getString("propostaid")%></td>
+                    <td><%=propostas.getString("mappingid")%></td>
                     <td><%=propostas.getString("nomecliente")%></td>
                     <td><%=propostas.getString("businessmanager")%></td>
                     <td><%=propostas.getString("accountmanager")%></td>

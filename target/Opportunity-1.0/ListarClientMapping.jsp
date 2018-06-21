@@ -54,7 +54,7 @@
 
         <div align ="center">
             <br>
-            <h2>Listagem de Mapeamentos</h2>
+            <h2>Listagem de Clients Mapping</h2>
             <font size="1" face="Arial" >
             <table border='2' cellpadding='10' width='1100'>
                 <tr>
@@ -81,33 +81,33 @@
 
                 </tr>
                 <%
-                    ResultSet propostas = (ResultSet) request.getAttribute("propostas");
+                    ResultSet clientmapping = (ResultSet) request.getAttribute("clientmapping");
                     int linha = 1;
-                    while (propostas.next()) {
+                    while (clientmapping.next()) {
 
 
                 %>
                 <tr>
 
                     <td><%=linha%></td>
-                    <td><%=propostas.getString("propostaid")%></td>
-                    <td><%=propostas.getString("nomecliente")%></td>
-                    <td><%=propostas.getString("businessmanager")%></td>
-                    <td><%=propostas.getString("accountmanager")%></td>
-                    <td><%=propostas.getString("creator")%></td>
-                    <td><%=propostas.getString("questao1")%></td>
-                    <td><%=propostas.getString("questao2")%></td>
-                    <td><%=propostas.getString("questao3")%></td>
-                    <td><%=propostas.getString("questao4")%></td>
-                    <td><%=propostas.getString("questao5")%></td>
-                    <td><%=propostas.getString("questao6")%></td>
-                    <td><%=propostas.getString("questao7")%></td>
-                    <td><%=propostas.getString("questao8")%></td>
-                    <td><%=propostas.getString("questao9")%></td>
-                    <td><%=propostas.getString("questao10")%></td>
-                    <td><%=propostas.getString("questao11")%></td>
+                    <td><%=clientmapping.getString("mappingid")%></td>
+                    <td><%=clientmapping.getString("nomecliente")%></td>
+                    <td><%=clientmapping.getString("businessmanager")%></td>
+                    <td><%=clientmapping.getString("accountmanager")%></td>
+                    <td><%=clientmapping.getString("creator")%></td>
+                    <td><%=clientmapping.getString("questao1")%></td>
+                    <td><%=clientmapping.getString("questao2")%></td>
+                    <td><%=clientmapping.getString("questao3")%></td>
+                    <td><%=clientmapping.getString("questao4")%></td>
+                    <td><%=clientmapping.getString("questao5")%></td>
+                    <td><%=clientmapping.getString("questao6")%></td>
+                    <td><%=clientmapping.getString("questao7")%></td>
+                    <td><%=clientmapping.getString("questao8")%></td>
+                    <td><%=clientmapping.getString("questao9")%></td>
+                    <td><%=clientmapping.getString("questao10")%></td>
+                    <td><%=clientmapping.getString("questao11")%></td>
 
-                    <td><button type="submit" class="button" formaction="ConsultaProposta?propostaid=<%=propostas.getString("propostaid")%>">Alterar</button></td>
+                    <td><button type="submit" class="button" formaction="ConsultaProposta?propostaid=<%=clientmapping.getString("mappingid")%>">Alterar</button></td>
 
                     <%
 

@@ -9,7 +9,7 @@ package com.mcibrasil.blcontrol.model;
  *
  * @author ASAPH-001
  */
-public class Propostas {
+public class ClientMapping {
 
     private String nomecliente;
     private String businessmanager;
@@ -147,7 +147,7 @@ public class Propostas {
         this.questao11 = questao11;
     }
 
-    public Propostas(String nomecliente, String businessmanager, String accountmanager, String creator,
+    public ClientMapping(String nomecliente, String businessmanager, String accountmanager, String creator,
             float questao1, int questao2, String questao3, String questao4, String questao5, String questao6,
             String questao7, String questao8, float questao9, String questao10, String questao11) {
         this.nomecliente = nomecliente;

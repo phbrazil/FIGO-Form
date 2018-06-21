@@ -93,7 +93,7 @@
 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar Proposta</title>
+        <title>Cadastrar Client Mapping</title>
 
     </head>
 
@@ -117,7 +117,7 @@
 
 
 
-        <form name = "Propostas" action="${pageContext.request.contextPath}/PropostasServlet" method="POST">
+        <form name = "Propostas" action="${pageContext.request.contextPath}/ClientMappingServlet" method="POST">
 
             <div id="includedContent"></div>
 
@@ -129,7 +129,7 @@
                 <div class="container">
                     <div class="py-5 text-center">
                         <!--img class="d-block mx-auto mb-4" src="img/LogoPetMaster.png" alt="" width="200" height="200"-->
-                        <h2>Cadastrar Mapeamento</h2>
+                        <h2>Novo Client Mapping</h2>
                     </div>
                 </div>
 

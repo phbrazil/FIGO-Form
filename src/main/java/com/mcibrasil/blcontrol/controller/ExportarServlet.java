@@ -6,7 +6,7 @@
 package com.mcibrasil.blcontrol.controller;
 
 import com.mcibrasil.blcontrol.dao.ProjetosDAO;
-import com.mcibrasil.blcontrol.dao.PropostasDAO;
+import com.mcibrasil.blcontrol.dao.ClientMappingDAO;
 import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,15 +45,15 @@ public class ExportarServlet extends HttpServlet {
             request.setAttribute("projetos", exportproj);
             request.getRequestDispatcher("ExportProjetos.jsp").forward(request, response);
 
-        } else if (acaoreport.equals("ExportPropostas")) {
+        } else if (acaoreport.equals("ExportClientMapping")) {
 
-            PropostasDAO propostasDAO = new PropostasDAO();
+            ClientMappingDAO clientmappingDAO = new ClientMappingDAO();
 
-            ResultSet exportpropostas = propostasDAO.PesquisarPropostasGeral();
+            ResultSet exportclientmapping= clientmappingDAO.PesquisarClientMappingGeral();
             acaoreport = null;
 
-            request.setAttribute("propostas", exportpropostas);
-            request.getRequestDispatcher("ExportPropostas.jsp").forward(request, response);
+            request.setAttribute("clientmapping", exportclientmapping);
+            request.getRequestDispatcher("ExportClientMapping.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarProjetos")) {
 
@@ -66,16 +66,19 @@ public class ExportarServlet extends HttpServlet {
             request.setAttribute("projetos", exportproj);
             request.getRequestDispatcher("ListarProjetos.jsp").forward(request, response);
 
-        } else if (acaoreport.equals("ListarPropostas")) {
+        } else if (acaoreport.equals("ListarClientMapping")) {
+            
+            System.out.println("entrei aqui");
+            
 
-            PropostasDAO propostas = new PropostasDAO();
+            ClientMappingDAO clientmapping = new ClientMappingDAO();
 
-            ResultSet exportpropostas = propostas.PesquisarPropostasGeral();
+            ResultSet exportclientmapping = clientmapping.PesquisarClientMappingGeral();
 
             acaoreport = null;
 
-            request.setAttribute("propostas", exportpropostas);
-            request.getRequestDispatcher("ListarPropostas.jsp").forward(request, response);
+            request.setAttribute("clientmapping", exportclientmapping);
+            request.getRequestDispatcher("ListarClientMapping.jsp").forward(request, response);
 
         }
 

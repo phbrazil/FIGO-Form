@@ -5,7 +5,7 @@
  */
 package com.mcibrasil.blcontrol.controller;
 
-import com.mcibrasil.blcontrol.model.Propostas;
+import com.mcibrasil.blcontrol.model.ClientMapping;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,7 +48,7 @@ public class ProjetosServlet extends HttpServlet {
 
        // Projetos propostas = new Propostas(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
 
-        com.mcibrasil.blcontrol.dao.PropostasDAO gravarproposta = new com.mcibrasil.blcontrol.dao.PropostasDAO();
+        com.mcibrasil.blcontrol.dao.ClientMappingDAO gravarproposta = new com.mcibrasil.blcontrol.dao.ClientMappingDAO();
 
        // gravarproposta.GravarProposta(propostas);
 

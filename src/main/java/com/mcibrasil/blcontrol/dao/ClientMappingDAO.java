@@ -13,11 +13,11 @@ import java.sql.ResultSet;
  *
  * @author paulo.bezerra
  */
-public class PropostasDAO {
+public class ClientMappingDAO {
 
     private Connection conexao = null;
 
-    public ResultSet PesquisarPropostasGeral() {
+    public ResultSet PesquisarClientMappingGeral() {
 
         String selectgeral = "";
 
@@ -30,7 +30,7 @@ public class PropostasDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from propostas order by creator";
+            selectgeral = "select * from clientmapping order by creator";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {
@@ -47,7 +47,7 @@ public class PropostasDAO {
         return null;
     }
 
-    public void GravarProposta(com.mcibrasil.blcontrol.model.Propostas prospeccao) {
+    public void GravarClientMapping(com.mcibrasil.blcontrol.model.ClientMapping prospeccao) {
 
         Conexao bancoconexao = new Conexao();
 
@@ -55,7 +55,7 @@ public class PropostasDAO {
 
             Connection conexao = bancoconexao.getConnection();
 
-            String query = ("INSERT INTO propostas (nomecliente, businessmanager,accountmanager,"
+            String query = ("INSERT INTO clientmapping (nomecliente, businessmanager,accountmanager,"
                     + "creator, questao1,questao2, questao3, questao4, questao5, questao6, questao7,questao8,questao9,questao10,"
                     + "questao11) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 

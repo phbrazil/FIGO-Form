@@ -23,8 +23,8 @@ datacadastro VARCHAR(20),
 statuscliente BOOLEAN NOT NULL,
 PRIMARY KEY (clienteid, cnpj));
 
-CREATE TABLE propostas(
-propostaid INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE clientmapping(
+mappingid INT NOT NULL AUTO_INCREMENT,
 nomecliente VARCHAR(60) NOT NULL,
 businessmanager VARCHAR(60) NOT NULL,
 accountmanager VARCHAR(60) NOT NULL,
@@ -40,7 +40,7 @@ questao8 VARCHAR(40) NOT NULL, -- 8) Se homologação, há contrato? Quando ser�
 questao9 FLOAT(10,2), -- 9) Quanto comprou da MCI em 2017 / 2018?
 questao10 VARCHAR(60) NOT NULL, -- 10) Quais são as agencias que estao dentro do cliente? (quem são nossos concorrentes?)
 questao11 VARCHAR(60) NOT NULL, -- 11) Vocês homologam empresa de Cenografia e AV? Se sim, quando será feita a próxima homologação?
-PRIMARY KEY (propostaid, nomecliente));
+PRIMARY KEY (mappingid, nomecliente));
 	
 
 
@@ -57,7 +57,7 @@ INSERT INTO usuarios (nomecomp, bl, email, password) values ('paulo henrique bez
 
 CREATE TABLE projetos(
 projectid INT NOT NULL AUTO_INCREMENT,
-nomecliente VARCHAR(60) NOT NULL,
+clienteid VARCHAR(60) NOT NULL,
 area VARCHAR(20) NOT NULL,
 cidade VARCHAR(50) NOT NULL,
 uf VARCHAR(2) NOT NULL,

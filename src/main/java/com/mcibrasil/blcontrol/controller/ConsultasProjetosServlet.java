@@ -6,7 +6,7 @@
 package com.mcibrasil.blcontrol.controller;
 
 import com.mcibrasil.blcontrol.dao.ProjetosDAO;
-import com.mcibrasil.blcontrol.dao.PropostasDAO;
+import com.mcibrasil.blcontrol.dao.ClientMappingDAO;
 import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -49,6 +49,7 @@ public class ConsultasProjetosServlet extends HttpServlet {
         request.setAttribute("valorbusca", null);
 
         request.setAttribute("resultadoprojetos", resultado);
+        
         request.getRequestDispatcher("ConsultaProjetosResultado.jsp").forward(request, response);
 
     }

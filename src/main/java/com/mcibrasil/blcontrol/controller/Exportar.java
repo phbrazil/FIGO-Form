@@ -37,8 +37,6 @@ public class Exportar extends HttpServlet {
 
         if (acaoreport.equals("ExportProjetos")) {
 
-            System.out.println("to aqui no exportar");
-
             ProjetosDAO projetosdao = new ProjetosDAO();
 
             ResultSet exportproj = projetosdao.PesquisarProjetosGeral();
@@ -46,6 +44,16 @@ public class Exportar extends HttpServlet {
 
             request.setAttribute("projetos", exportproj);
             request.getRequestDispatcher("ExportProjetos.jsp").forward(request, response);
+
+        } else if (acaoreport.equals("ExportProspeccao")) {
+
+            ProspeccaoDAO prospeccaoDAO = new ProspeccaoDAO();
+
+            ResultSet exportprospec = prospeccaoDAO.PesquisarProspeccaoGeral();
+            acaoreport = null;
+
+            request.setAttribute("prospeccao", exportprospec);
+            request.getRequestDispatcher("ExportProspeccao.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarProjetos")) {
 

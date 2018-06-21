@@ -77,7 +77,7 @@
                     <td  bgcolor="#33CCCC" align = "center">Questao11</td>
 
                     <!--td><button type="submit" class="button" name ="acaoreport" value="ExportProjetos" formaction="Exportar">Exportar</button></td-->
-                    <td><a href="Exportar?acaoreport=ExportProjetos" style="text-decoration:none;">Exportar</td>
+                    <td><a href="Exportar?acaoreport=ExportProspeccao" style="text-decoration:none;">Exportar</td>
 
                 </tr>
                 <%

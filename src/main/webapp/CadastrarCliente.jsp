@@ -166,30 +166,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                        <label>Phone1 / DDD</label>
-                        <input onkeydown="javascript: fMasc(this, mTel);" name = "phone1" type="text" class="form-control" id="tel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "">
-                        <div class="invalid-feedback">
-                            Telefone obrigatório
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label>Phone2 / DDD</label>
-                        <input onkeydown="javascript: fMasc(this, mTel);" name ="phone2" type="text" class="form-control" id="cel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "" required>
-                        <div class="invalid-feedback">
-                            Telefone obrigatório
-                        </div>
-                    </div>
+                    <div class="row">
 
-                    <div class="mb-3">
-                        <label for="primeironome">Main Contact name / Pessoa de contato</label>
-                        <div class="input-group">
-                            <input name="maincontact" type="text" class="form-control" id="maincontact" placeholder="" value="" maxlength ="60" required>
+                        <div class="col-md-3 mb-3">
+                            <label>Phone1 / DDD</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "phone1" type="text" class="form-control" id="tel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "">
                             <div class="invalid-feedback">
-                                Contato necessário
+                                Telefone obrigatório
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label>Phone2 / DDD</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name ="phone2" type="text" class="form-control" id="cel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "" required>
+                            <div class="invalid-feedback">
+                                Telefone obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="primeironome">Main Contact name / Pessoa de contato</label>
+                            <div class="input-group">
+                                <input name="maincontact" type="text" class="form-control" id="maincontact" placeholder="" value="" maxlength ="60" required>
+                                <div class="invalid-feedback">
+                                    Contato necessário
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
                     <div class="mb-3">
                         <label for="primeironome">Contact's Title / Cargo pessoa de contato</label>
@@ -235,17 +239,27 @@
                                 Favor inserir o Numero
                             </div>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Building Floor Room / Complemento</label>
+                            <input name ="complemento" type="text" class="form-control" id="numero" size="60" maxlength ="50" required>
+
+                            <div class="invalid-feedback">
+                                Favor inserir o Complemento
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Block / Bairro</label>
+                            <input name ="bairro" type="text" class="form-control" id="bairro" size="60" maxlength ="50" required>
+
+                            <div class="invalid-feedback">
+                                Favor inserir o Bairro
+                            </div>
+                        </div>
 
                     </div>
+
                     <div class="mb-3">
-                        <label>Bairro</label>
-                        <input name ="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro" size="40" maxlength ="50" required>
-                        <div class="invalid-feedback">
-                            Favor inserir o Bairro.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label>Cidade</label>
+                        <label>City / Cidade</label>
                         <input name ="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" size = "40" maxlength ="50" required>
                         <div class="invalid-feedback">
                             Favor inserir a Cidade.
@@ -255,7 +269,7 @@
 
                     <div class="row">
                         <div class="col-md-5 mb-3">
-                            <label>País</label>
+                            <label>Country /País</label>
                             <select name ="pais" class="custom-select d-block w-100" id="pais" required>
                                 <option>Brasil</option>
                             </select>
@@ -264,11 +278,11 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>Estado</label>
+                            <label>State / Estado</label>
                             <select name = "estado" class="custom-select d-block w-100" id="estado"  required>
                                 <option>São Paulo</option>
                                 <option>Rio de Janeiro</option>
-                                <option>São Paulo</option>
+                                <option>Minas Gerais</option>
                                 <option>São Paulo</option>
                                 <option>São Paulo</option>
                                 <option>São Paulo</option>
@@ -279,21 +293,6 @@
                                 Favor selecionar um Estado..
                             </div>
                         </div>
-
-                        <div class="col-md-3 mb-3">
-                            <label  for="uf">UF</label>
-                            <select name = "uf" class="custom-select d-block w-100" id="uf"  required>
-                                <option>SP</option>
-                                <option>RJ</option>
-                                <option>MG</option>
-                            </select>
-
-                            <div class="invalid-feedback">
-                                Favor selecionar uma UF..
-                            </div>
-                        </div>
-
-
 
                         <hr class="mb-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit" name = "gravarcliente">Gravar</button>

@@ -56,6 +56,8 @@
             <br>
             <h2>Consulta de Projetos</h2>
             <font size="1" face="Arial" >
+            <button type="submit" class="button" name ="novabusca" value="Nova Busca" formaction="ConsultaProjeto.jsp">Nova Busca</button>
+            <br>
             <table border='2' cellpadding='10' width='1100'>
                 <tr>
                     <td  bgcolor="#33CCCC">Linha</td>
@@ -193,7 +195,11 @@
 
 </form>
 </body>
-
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

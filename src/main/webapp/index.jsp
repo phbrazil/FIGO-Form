@@ -1,3 +1,8 @@
+
+<%-- 
+    Created on : june 20, 2018, 11:13:17 PM
+    Author     : paulo.bezerra
+--%>
 <!doctype html>
 <html lang="en">
     <head>
@@ -6,7 +11,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Welcome to BL Control</title>
+        <title>Welcome to Opportunity</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

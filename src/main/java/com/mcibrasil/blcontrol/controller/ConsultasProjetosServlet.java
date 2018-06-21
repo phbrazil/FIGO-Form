@@ -42,9 +42,7 @@ public class ConsultasProjetosServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String valorbusca = request.getParameter("valorbusca");
-
-        System.out.println(valorbusca);
-
+        
         ProjetosDAO projetosdao = new ProjetosDAO();
 
         ResultSet resultado = projetosdao.BuscarProjeto(valorbusca);

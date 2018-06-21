@@ -48,7 +48,8 @@ public class ProjetosDAO {
 
     public ResultSet BuscarProjeto(String valorbusca) {
 
-        String selectgeral = "";
+        String selectcodigo = "";
+        String selectnome = "";
 
         Conexao bancoconexao = new Conexao();
 
@@ -59,11 +60,22 @@ public class ProjetosDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from projetos where projectname like '%"+valorbusca+"%'";
-            ResultSet resultgeral = st.executeQuery(selectgeral);
 
-            if (resultgeral != null) {
-                return resultgeral;
+            if (valorbusca.trim().length() > 4) {
+                selectnome = "select * from projetos where projectname like '%" + valorbusca.trim() + "%'";
+                ResultSet resultnome = st.executeQuery(selectnome);
+                return resultnome;
+
+            } else if (valorbusca.trim().length() == 4) {
+                selectcodigo = "select * from projetos where projectanalcode = '" + valorbusca.trim() + "'";
+                ResultSet resultcodigo = st.executeQuery(selectcodigo);
+                return resultcodigo;
+
+            } else if (valorbusca.trim().length() < 4) {
+                selectnome = "select * from projetos where projectname like '%" + valorbusca.trim() + "%'";
+                ResultSet resultnome = st.executeQuery(selectnome);
+                return resultnome;
+
             }
 
             conexao.close();

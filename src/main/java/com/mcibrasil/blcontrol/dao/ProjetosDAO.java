@@ -59,7 +59,7 @@ public class ProjetosDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from projetos where projectname like '%"+valorbusca.trim()+"%'";
+            selectgeral = "select * from projetos where projectname like '%"+valorbusca+"%'";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {

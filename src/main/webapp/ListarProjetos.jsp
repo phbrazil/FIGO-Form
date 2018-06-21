@@ -117,7 +117,7 @@
                     <td><%=projetos.getString("weightedprospec")%></td>
                     <td><%=projetos.getString("datacadastro")%></td>
                     <td><%=projetos.getString("area")%></td>
-                    <td><button type="submit" class="button" formaction="ConsultaCli?cpfcliente=<%=projetos.getString("projectname")%>">Alterar</button></td>
+                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
                 <tr>
                     <%
                     } else if (projetos.getString("projectstatus").toUpperCase().contains("LOST")) {
@@ -143,7 +143,7 @@
                     <td><%=projetos.getString("weightedprospec")%></td>
                     <td><%=projetos.getString("datacadastro")%></td>
                     <td><%=projetos.getString("area")%></td>
-                    <td><button type="submit" class="button" formaction="ConsultaCli?cpfcliente=<%=projetos.getString("projectname")%>">Alterar</button></td>
+                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
 
                     <%
 
@@ -170,7 +170,7 @@
                     <td><%=projetos.getString("weightedprospec")%></td>
                     <td><%=projetos.getString("datacadastro")%></td>
                     <td><%=projetos.getString("area")%></td>
-                    <td><button type="submit" class="button" formaction="ConsultaCli?cpfcliente=<%=projetos.getString("projectname")%>">Alterar</button></td>
+                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
 
                     <%
 

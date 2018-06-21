@@ -38,8 +38,12 @@ public class ConsultasProjetosServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setCharacterEncoding("UTF-8");
 
         String valorbusca = request.getParameter("valorbusca");
+
+        System.out.println(valorbusca);
 
         ProjetosDAO projetosdao = new ProjetosDAO();
 
@@ -49,7 +53,7 @@ public class ConsultasProjetosServlet extends HttpServlet {
         request.setAttribute("valorbusca", null);
 
         request.setAttribute("resultadoprojetos", resultado);
-        
+
         request.getRequestDispatcher("ConsultaProjetosResultado.jsp").forward(request, response);
 
     }

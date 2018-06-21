@@ -27,6 +27,8 @@ public class Conexao {
         try {
             Class.forName(driver);
             if (conexao == null) {
+                
+                
                 conexao = DriverManager.getConnection(url, userName, password);
             }
         } catch (Exception e) {

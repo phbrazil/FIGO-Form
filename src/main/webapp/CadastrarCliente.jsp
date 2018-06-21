@@ -258,17 +258,17 @@
 
                     </div>
 
-                    <div class="mb-3">
-                        <label>City / Cidade</label>
-                        <input name ="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" size = "40" maxlength ="50" required>
-                        <div class="invalid-feedback">
-                            Favor inserir a Cidade.
-                        </div>
-                    </div>
-
-
                     <div class="row">
                         <div class="col-md-5 mb-3">
+                            <label>City / Cidade</label>
+                            <input name ="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" size = "40" maxlength ="50" required>
+                            <div class="invalid-feedback">
+                                Favor inserir a Cidade.
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
                             <label>Country /País</label>
                             <select name ="pais" class="custom-select d-block w-100" id="pais" required>
                                 <option>Brasil</option>

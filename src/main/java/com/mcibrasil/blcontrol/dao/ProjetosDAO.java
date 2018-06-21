@@ -16,9 +16,6 @@ public class ProjetosDAO {
 
     private Connection conexao = null;
 
-
-
-
     public ResultSet PesquisarProjetosGeral() {
 
         String selectgeral = "";
@@ -26,13 +23,43 @@ public class ProjetosDAO {
         Conexao bancoconexao = new Conexao();
 
         try {
-            
+
             Class.forName("com.mysql.jdbc.Driver");
 
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-           selectgeral = "select * from projetos order by area";
+            selectgeral = "select * from projetos order by area";
+            ResultSet resultgeral = st.executeQuery(selectgeral);
+
+            if (resultgeral != null) {
+                return resultgeral;
+            }
+
+            conexao.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Error: " + e.getMessage());
+
+        }
+        return null;
+    }
+
+    public ResultSet BuscarProjeto(String valorbusca) {
+
+        String selectgeral = "";
+
+        Conexao bancoconexao = new Conexao();
+
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+
+            conexao = bancoconexao.getConnection();
+
+            java.sql.Statement st = conexao.createStatement();
+            selectgeral = "select * from projetos where projectname like '%"+valorbusca.trim()+"%'";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {

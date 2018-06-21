@@ -54,12 +54,12 @@
 
         <div align ="center">
             <br>
-            <h2>Listagem de Propostas</h2>
+            <h2>Listagem de Mapeamentos</h2>
             <font size="1" face="Arial" >
             <table border='2' cellpadding='10' width='1100'>
                 <tr>
                     <td  bgcolor="#33CCCC">Linha</td>
-                    <td  bgcolor="#33CCCC" align = "center">Código da Proposta</td>
+                    <td  bgcolor="#33CCCC" align = "center">Código do Mapeamento</td>
                     <td  bgcolor="#33CCCC" align = "center">Nome do Cliente</td>
                     <td  bgcolor="#33CCCC" align = "center">Business Manager</td>
                     <td  bgcolor="#33CCCC" align = "center">Account Manager</td>

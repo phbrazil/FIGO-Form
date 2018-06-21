@@ -65,9 +65,9 @@
                     <div class="dropdown">
                         <a class="nav-link js-scroll-trigger">Consultas</a>
                         <div class="dropdown-content">
-                            <p><a href="Home.jsp" style="text-decoration:none;">Propostas</a></p>
+                            <p><a href="Home.jsp" style="text-decoration:none;">Mapeamento</a></p>
                             <p><a href="Home.jsp" style="text-decoration:none;">Clientes</a></p>
-                            <p><a href="Home.jsp" style="text-decoration:none;">Projetos</a></p>
+                            <p><a href="ConsultaProjeto.jsp" style="text-decoration:none;">Projetos</a></p>
 
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                     <div class="dropdown">
                         <a class="nav-link js-scroll-trigger">Cadastrar</a>
                         <div class="dropdown-content">
-                            <p><a href="CadastrarProposta.jsp" style="text-decoration:none;">Proposta</a></p>
+                            <p><a href="CadastrarProposta.jsp" style="text-decoration:none;">Mapeamento</a></p>
                             <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Cliente</a></p>
                             <p><a href="CadastrarProjeto.jsp" style="text-decoration:none;">Projeto</a></p>
 
@@ -91,8 +91,8 @@
                         <a class="nav-link js-scroll-trigger">Relatórios</a>
                         <div class="dropdown-content">
                             <p><a href="Exportar?acaoreport=ListarProjetos" style="text-decoration:none;">Listar Projetos</a></p>
-                            <p><a href="Exportar?acaoreport=ListarPropostas" style="text-decoration:none;">Listar Propostas</a></p>
-                            <p><a href="RelatoriosServlet?acaoreport=ListarClientes" style="text-decoration:none;">Listar Clientes</a></p>
+                            <p><a href="Exportar?acaoreport=ListarPropostas" style="text-decoration:none;">Listar Mapeamentos</a></p>
+                            <p><a href="RelatoriosServlet?acaoreport=ListarClientes" style="text-decoration:none;">Listar Clientes ??????</a></p>
                         </div>
                     </div>
 

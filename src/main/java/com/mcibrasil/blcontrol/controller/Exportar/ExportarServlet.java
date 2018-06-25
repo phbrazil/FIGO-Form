@@ -38,38 +38,7 @@ public class ExportarServlet extends HttpServlet {
 
         String acaoreport = request.getParameter("acaoreport");
 
-        if (acaoreport.equals("ExportProjetos")) {
-
-            ProjetosDAO projetosdao = new ProjetosDAO();
-
-            ResultSet exportproj = projetosdao.PesquisarProjetosGeral();
-            acaoreport = null;
-
-            request.setAttribute("projetos", exportproj);
-            request.getRequestDispatcher("ExportProjetos.jsp").forward(request, response);
-
-        } else if (acaoreport.equals("ExportClientMapping")) {
-
-            ClientMappingDAO clientmappingDAO = new ClientMappingDAO();
-
-            ResultSet exportclientmapping = clientmappingDAO.PesquisarClientMappingGeral();
-            acaoreport = null;
-
-            request.setAttribute("clientmapping", exportclientmapping);
-            request.getRequestDispatcher("ExportClientMapping.jsp").forward(request, response);
-
-        } else if (acaoreport.equals("ExportProspects")) {
-
-            ProspectsDAO prospectdao = new ProspectsDAO();
-
-            ResultSet exportprospect = prospectdao.PesquisarProspectsGeral();
-
-            acaoreport = null;
-
-            request.setAttribute("prospects", exportprospect);
-            request.getRequestDispatcher("ExportProspects.jsp").forward(request, response);
-
-        } else if (acaoreport.equals("ListarProjetos")) {
+        if (acaoreport.equals("ListarProjetos")) {
 
             ProjetosDAO projetosdao = new ProjetosDAO();
 
@@ -79,6 +48,16 @@ public class ExportarServlet extends HttpServlet {
 
             request.setAttribute("projetos", exportproj);
             request.getRequestDispatcher("ListarProjetos.jsp").forward(request, response);
+
+        } else if (acaoreport.equals("ExportProjetos")) {
+
+            ProjetosDAO projetosdao = new ProjetosDAO();
+
+            ResultSet exportproj = projetosdao.PesquisarProjetosGeral();
+            acaoreport = null;
+
+            request.setAttribute("projetos", exportproj);
+            request.getRequestDispatcher("ExportProjetos.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarClientMapping")) {
 
@@ -93,6 +72,16 @@ public class ExportarServlet extends HttpServlet {
             request.setAttribute("clientmapping", exportclientmapping);
             request.getRequestDispatcher("ListarClientMapping.jsp").forward(request, response);
 
+        } else if (acaoreport.equals("ExportClientMapping")) {
+
+            ClientMappingDAO clientmappingDAO = new ClientMappingDAO();
+
+            ResultSet exportclientmapping = clientmappingDAO.PesquisarClientMappingGeral();
+            acaoreport = null;
+
+            request.setAttribute("clientmapping", exportclientmapping);
+            request.getRequestDispatcher("ExportClientMapping.jsp").forward(request, response);
+
         } else if (acaoreport.equals("ListarProspects")) {
 
             ProspectsDAO prospectdao = new ProspectsDAO();
@@ -103,6 +92,17 @@ public class ExportarServlet extends HttpServlet {
 
             request.setAttribute("prospects", exportprospect);
             request.getRequestDispatcher("ListarProspects.jsp").forward(request, response);
+
+        } else if (acaoreport.equals("ExportProspects")) {
+
+            ProspectsDAO prospectdao = new ProspectsDAO();
+
+            ResultSet exportprospect = prospectdao.PesquisarProspectsGeral();
+
+            acaoreport = null;
+
+            request.setAttribute("prospects", exportprospect);
+            request.getRequestDispatcher("ExportProspects.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarSuspects")) {
 
@@ -115,7 +115,7 @@ public class ExportarServlet extends HttpServlet {
             request.setAttribute("suspects", exportsuspects);
             request.getRequestDispatcher("ListarSuspects.jsp").forward(request, response);
 
-        }else if (acaoreport.equals("ExportSuspects")) {
+        } else if (acaoreport.equals("ExportSuspects")) {
 
             SuspectsDAO suspectsdao = new SuspectsDAO();
 

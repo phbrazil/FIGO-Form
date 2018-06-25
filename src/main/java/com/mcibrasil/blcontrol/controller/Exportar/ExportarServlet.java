@@ -8,6 +8,8 @@ package com.mcibrasil.blcontrol.controller.Exportar;
 import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
 import com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO;
 import com.mcibrasil.blcontrol.dao.Prospects.ProspectsDAO;
+import com.mcibrasil.blcontrol.dao.Suspects.SuspectsDAO;
+import com.mcibrasil.blcontrol.model.Suspects.Suspects;
 import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -56,7 +58,7 @@ public class ExportarServlet extends HttpServlet {
             request.setAttribute("clientmapping", exportclientmapping);
             request.getRequestDispatcher("ExportClientMapping.jsp").forward(request, response);
 
-        }else if (acaoreport.equals("ExportProspects")) {
+        } else if (acaoreport.equals("ExportProspects")) {
 
             ProspectsDAO prospectdao = new ProspectsDAO();
 
@@ -101,6 +103,28 @@ public class ExportarServlet extends HttpServlet {
 
             request.setAttribute("prospects", exportprospect);
             request.getRequestDispatcher("ListarProspects.jsp").forward(request, response);
+
+        } else if (acaoreport.equals("ListarSuspects")) {
+
+            SuspectsDAO suspectsdao = new SuspectsDAO();
+
+            ResultSet exportsuspects = suspectsdao.PesquisarSuspectsGeral();
+
+            acaoreport = null;
+
+            request.setAttribute("suspects", exportsuspects);
+            request.getRequestDispatcher("ListarSuspects.jsp").forward(request, response);
+
+        }else if (acaoreport.equals("ExportSuspects")) {
+
+            SuspectsDAO suspectsdao = new SuspectsDAO();
+
+            ResultSet exportsuspects = suspectsdao.PesquisarSuspectsGeral();
+
+            acaoreport = null;
+
+            request.setAttribute("suspects", exportsuspects);
+            request.getRequestDispatcher("ExportSuspects.jsp").forward(request, response);
 
         }
 

@@ -44,18 +44,17 @@ public class ProspectsServlet extends HttpServlet {
         String hub = request.getParameter("hub");
         String travel = request.getParameter("travel");
         String contatomci = request.getParameter("contatomci");
-        
+
         Prospects prospects = new Prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci);
-        
+
         ProspectsDAO gravarprospect = new ProspectsDAO();
-        
+
         gravarprospect.GravarProspects(prospects);
         prospects = null;
-        
-        request.setAttribute("mensagem", "Prospect Cadastrado");
-        
-        request.getRequestDispatcher("CadastrarProspect.jsp").forward(request, response);
 
+        request.setAttribute("mensagem", "Prospect Cadastrado");
+
+        request.getRequestDispatcher("CadastrarProspect.jsp").forward(request, response);
     }
 
     @Override

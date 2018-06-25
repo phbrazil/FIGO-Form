@@ -179,8 +179,8 @@
                         <div class="col-md-3 mb-3">
                             <label>Nacional / Internacional</label>
                             <select name = "origem" class="custom-select d-block w-100" id="origem"  required>
-                                <option>Sim</option>
-                                <option>Não</option>
+                                <option>Nacional</option>
+                                <option>Internacional</option>
                             </select>
 
                             <div class="invalid-feedback">
@@ -190,6 +190,7 @@
                         <div class="col-md-2 mb-3">
                             <label>HUB</label>
                             <select name = "hub" class="custom-select d-block w-100" id="hub"  required>
+                                <option>Selecionar...</option>
                                 <option>Sim</option>
                                 <option>Não</option>
                             </select>
@@ -201,6 +202,7 @@
                         <div class="col-md-3 mb-3">
                             <label>Travel</label>
                             <select name = "travel" class="custom-select d-block w-100" id="travel"  required>
+                                <option>Selecionar...</option>
                                 <option>Sim</option>
                                 <option>Não</option>
                             </select>
@@ -343,7 +345,7 @@
         if (mensagem == "Prospect Cadastrado") {
             alert(mensagem)
 
-        } 
+        }
     </script>
 
 

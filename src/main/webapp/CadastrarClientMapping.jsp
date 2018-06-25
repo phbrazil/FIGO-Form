@@ -393,17 +393,12 @@
 
         var mensagem = "${mensagem}"
 
-        var cpfcliente = "${cpfcliente}"
 
 
-        if (mensagem == "falha") {
-            alert("O CPF " + cpfcliente + " já se encontra cadastrado")
-
-        } else if (mensagem == "Cliente cadastrado com sucesso!") {
-
+        if (mensagem == "Client Mapping Cadastrado") {
             alert(mensagem)
 
-        }
+        } 
     </script>
 
 

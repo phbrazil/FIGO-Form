@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.controller;
+package com.mcibrasil.blcontrol.controller.Login;
 
+import com.mcibrasil.blcontrol.dao.Login.AcessoLoginDAO;
+import com.mcibrasil.blcontrol.model.Login.LoginDados;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -26,53 +28,23 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //LoginDados logindados = new LoginDados();
+        LoginDados logindados = new LoginDados(null, null, null, null, 0);
         boolean acessopermitido = false;
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
 
+        logindados.setUsername(username);
+        logindados.setPassword(password);
+        AcessoLoginDAO acessologin = new AcessoLoginDAO();
+        acessopermitido = acessologin.ValidaAcesso(logindados);
 
-       /* if (username.equals("paulo.bezerra@mci-group.com") && password.equals("123")) {
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
-
-        }else if (username.equals("simone.nogueira@mci-group.com") && password.equals("123")) {
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
-
-        }else if (username.equals("thays.lind@mci-group.com") && password.equals("123")) {
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
-
-        }
-
-        String vendedor = null;
-        */
-
-        //logindados.setUsername(username);
-        //logindados.setPassword(password);
-        //AcessoLogin acessologin = new AcessoLogin();
-        //acessopermitido = acessologin.ValidaAcesso(logindados);
-
-        /* if (acessopermitido == true) {
-
-            HttpSession sessao = request.getSession();
-            
-            Sessao sessaodados = new Sessao();
+        if (acessopermitido == true) {
 
             request.setAttribute("NomeDoUser", logindados.getNomeUser());
-            request.setAttribute("vendedor", logindados.getUserName());
+            acessopermitido = false;
+            request.getRequestDispatcher("Home.jsp").forward(request, response);
             
-            sessaodados.setIdsessao(sessao.getId());
-            sessaodados.setVendedor(logindados.getUserName());
-            sessaodados.setIdloja(logindados.getIdloja());
-            
-            BancoSessao insertsessao = new BancoSessao();
-
-            insertsessao.InsertSessao(sessaodados);
-            
-            request.setAttribute("idsessao", sessao.getId());
-            request.getRequestDispatcher("SessaoServlet").forward(request, response);
 
         } else {
 
@@ -81,7 +53,7 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
         }
-         */
+
     }
 
 }

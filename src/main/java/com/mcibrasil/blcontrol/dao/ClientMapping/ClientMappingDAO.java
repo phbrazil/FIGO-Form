@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.dao;
+package com.mcibrasil.blcontrol.dao.ClientMapping;
 
+import com.mcibrasil.blcontrol.dao.Conexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,7 +48,7 @@ public class ClientMappingDAO {
         return null;
     }
 
-    public void GravarClientMapping(com.mcibrasil.blcontrol.model.ClientMapping prospeccao) {
+    public void GravarClientMapping(com.mcibrasil.blcontrol.model.ClientMapping.ClientMapping prospeccao) {
 
         Conexao bancoconexao = new Conexao();
 

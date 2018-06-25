@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.dao;
+package com.mcibrasil.blcontrol.dao.Projetos;
 
+import com.mcibrasil.blcontrol.dao.Conexao.Conexao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 

@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.controller;
+package com.mcibrasil.blcontrol.controller.Exportar;
 
-import com.mcibrasil.blcontrol.dao.ProjetosDAO;
-import com.mcibrasil.blcontrol.dao.ClientMappingDAO;
+import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
+import com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO;
+import com.mcibrasil.blcontrol.dao.Prospects.ProspectsDAO;
 import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -49,11 +50,22 @@ public class ExportarServlet extends HttpServlet {
 
             ClientMappingDAO clientmappingDAO = new ClientMappingDAO();
 
-            ResultSet exportclientmapping= clientmappingDAO.PesquisarClientMappingGeral();
+            ResultSet exportclientmapping = clientmappingDAO.PesquisarClientMappingGeral();
             acaoreport = null;
 
             request.setAttribute("clientmapping", exportclientmapping);
             request.getRequestDispatcher("ExportClientMapping.jsp").forward(request, response);
+
+        }else if (acaoreport.equals("ExportProspects")) {
+
+            ProspectsDAO prospectdao = new ProspectsDAO();
+
+            ResultSet exportprospect = prospectdao.PesquisarProspectsGeral();
+
+            acaoreport = null;
+
+            request.setAttribute("prospects", exportprospect);
+            request.getRequestDispatcher("ExportProspects.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarProjetos")) {
 
@@ -67,9 +79,8 @@ public class ExportarServlet extends HttpServlet {
             request.getRequestDispatcher("ListarProjetos.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarClientMapping")) {
-            
+
             System.out.println("entrei aqui");
-            
 
             ClientMappingDAO clientmapping = new ClientMappingDAO();
 
@@ -79,6 +90,17 @@ public class ExportarServlet extends HttpServlet {
 
             request.setAttribute("clientmapping", exportclientmapping);
             request.getRequestDispatcher("ListarClientMapping.jsp").forward(request, response);
+
+        } else if (acaoreport.equals("ListarProspects")) {
+
+            ProspectsDAO prospectdao = new ProspectsDAO();
+
+            ResultSet exportprospect = prospectdao.PesquisarProspectsGeral();
+
+            acaoreport = null;
+
+            request.setAttribute("prospects", exportprospect);
+            request.getRequestDispatcher("ListarProspects.jsp").forward(request, response);
 
         }
 

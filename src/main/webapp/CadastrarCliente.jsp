@@ -290,6 +290,109 @@
                                 Favor selecionar um Estado..
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label>Inscrição Estadual</label>
+                                <input name ="inscricest" type="text" class="form-control" id="inscricest" size="60" maxlength ="50" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir a inscrição
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Inscrição Municipal</label>
+                                <input name ="inscricmunic" type="text" class="form-control" id="inscricmunic" size="60" maxlength ="50" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir a inscrição
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Cnae / Cnae</label>
+                                <input name ="cnae" type="text" class="form-control" id="cnae" size="60" maxlength ="50" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir a inscrição
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Bank / Banco</label>
+                                <input name ="bank" type="text" class="form-control" id="bank" size="60" maxlength ="50" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir o Banco
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Agency / Agencia</label>
+                                <input name ="agencia" type="number" class="form-control" id="agencia" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir a Agencia
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Agency Digit / Dígito Agencia</label>
+                                <input name ="agenciadigito" type="number" class="form-control" id="agenciadigito" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir a Agencia
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Account / Conta</label>
+                                <input name ="account" type="number" class="form-control" id="account" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir a Conta
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Account Digit / Dígito Conta</label>
+                                <input name ="accountdigito" type="number" class="form-control" id="accountdigito" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir o Digito
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Invoice Term / Prazo de pagamento acordado</label>
+                                <input name ="invoice" type="text" class="form-control" id="invoice" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir o Invoice
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label>Pricing type / Fee ou Rebate</label>
+                                <input name ="pricing" type="text" class="form-control" id="pricing" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir o Invoice
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Billing form  / Forma de faturamento</label>
+                                <input name ="billingform" type="text" class="form-control" id="billingform" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir o Billing
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Notes / Observações</label>
+                                <input name ="notes" type="text" class="form-control" id="notes" required>
+
+                                <div class="invalid-feedback">
+                                    Favor inserir o Notes
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
 
                         <hr class="mb-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit" name = "gravarcliente">Gravar</button>

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.controller;
+package com.mcibrasil.blcontrol.controller.Projetos;
 
-import com.mcibrasil.blcontrol.dao.ProjetosDAO;
-import com.mcibrasil.blcontrol.dao.ClientMappingDAO;
+import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
+import com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO;
 import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;

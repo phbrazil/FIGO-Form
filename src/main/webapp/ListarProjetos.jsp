@@ -78,6 +78,7 @@
                     <td  bgcolor="#33CCCC" align = "center">Weighted Prospec</td>
                     <td  bgcolor="#33CCCC" align = "center">Data Cadastro
                     <td  bgcolor="#33CCCC" align = "center">Area</td>
+                    <td  bgcolor="#33CCCC" align = "center">Folder Path</td>
                     <td  bgcolor="#33CCCC" align = "center">Alterar</td> 
                     <!--td><button type="submit" class="button" name ="acaoreport" value="ExportProjetos" formaction="Exportar">Exportar</button></td-->
                     <td><a href="Exportar?acaoreport=ExportProjetos" style="text-decoration:none;">Exportar</td>
@@ -97,7 +98,7 @@
 
                     %>
 
-                    <td bgcolor="#00FF00"><%=linha%></td>
+                    <td bgcolor="#007FFF"><%=linha%></td>
                     <td><%=projetos.getString("projectanalcode")%></td>
                     <td><%=projetos.getString("projectname")%></td>
                     <td><%=projetos.getString("mcistdcliname")%></td>
@@ -117,6 +118,7 @@
                     <td><%=projetos.getString("weightedprospec")%></td>
                     <td><%=projetos.getString("datacadastro")%></td>
                     <td><%=projetos.getString("area")%></td>
+                    <td><%=projetos.getString("folderpath")%></td>
                     <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
                 <tr>
                     <%
@@ -143,6 +145,35 @@
                     <td><%=projetos.getString("weightedprospec")%></td>
                     <td><%=projetos.getString("datacadastro")%></td>
                     <td><%=projetos.getString("area")%></td>
+                    <td><%=projetos.getString("folderpath")%></td>
+                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
+
+                    <%
+
+                    } else if (projetos.getString("projectstatus").toUpperCase().contains("CONFIRMED")) {
+
+                    %>                    
+                    <td bgcolor="#32CD32"><%=linha%></td>
+                    <td><%=projetos.getString("projectanalcode")%></td>
+                    <td><%=projetos.getString("projectname")%></td>
+                    <td><%=projetos.getString("mcistdcliname")%></td>
+                    <td><%=projetos.getString("projectstatus")%></td>
+                    <td><%=projetos.getString("owner")%></td>
+                    <td><%=projetos.getString("cidade")%></td>
+                    <td><%=projetos.getString("uf")%></td>
+                    <td><%=projetos.getString("propreqdate")%></td>
+                    <td><%=projetos.getString("eventstartdate")%></td>
+                    <td><%=projetos.getString("eventclosingdate")%></td>
+                    <td><%=projetos.getString("paxnumber")%></td>
+                    <td><%=projetos.getString("cancelinsurance")%></td>
+                    <td><%=projetos.getString("probability")%></td>
+                    <td><%=projetos.getString("turnoverforowner")%></td>
+                    <td><%=projetos.getString("gmforowner")%></td>
+                    <td><%=projetos.getString("gmturnoverperc")%></td>
+                    <td><%=projetos.getString("weightedprospec")%></td>
+                    <td><%=projetos.getString("datacadastro")%></td>
+                    <td><%=projetos.getString("area")%></td>
+                    <td><%=projetos.getString("folderpath")%></td>
                     <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
 
                     <%
@@ -170,11 +201,11 @@
                     <td><%=projetos.getString("weightedprospec")%></td>
                     <td><%=projetos.getString("datacadastro")%></td>
                     <td><%=projetos.getString("area")%></td>
+                    <td><%=projetos.getString("folderpath")%></td>
                     <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
 
-                    <%
+                    <%}
 
-                            }
                             linha++;
 
                         }

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.model;
+package com.mcibrasil.blcontrol.model.ClientMapping;
 
 /**
  *
- * @author ASAPH-001
+ * @author paulo.bezerra
  */
 public class ClientMapping {
 

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.controller;
+package com.mcibrasil.blcontrol.controller.ClientMapping;
 
-import com.mcibrasil.blcontrol.dao.ProjetosDAO;
-import com.mcibrasil.blcontrol.model.ClientMapping;
+import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
+import com.mcibrasil.blcontrol.model.ClientMapping.ClientMapping;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,13 +49,15 @@ public class ClientMappingServlet extends HttpServlet {
 
         ClientMapping clientmapping = new ClientMapping(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
 
-        com.mcibrasil.blcontrol.dao.ClientMappingDAO gravarproposta = new com.mcibrasil.blcontrol.dao.ClientMappingDAO();
+        com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO gravarproposta = new com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO();
    
         gravarproposta.GravarClientMapping(clientmapping);
 
         clientmapping = null;
         
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        request.setAttribute("mensagem", "Client Mapping Cadastrado");
+        
+        request.getRequestDispatcher("CadastrarClientMapping.jsp").forward(request, response);
 
     }
 

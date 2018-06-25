@@ -65,11 +65,11 @@
                     <div class="dropdown">
                         <a class="nav-link js-scroll-trigger">Consultas</a>
                         <div class="dropdown-content">
+                            <p><a href="ConsultaProjeto.jsp" style="text-decoration:none;">Projetos</a></p>
                             <p><a href="Home.jsp" style="text-decoration:none;">Client Mapping</a></p>
                             <p><a href="Home.jsp" style="text-decoration:none;">Clientes</a></p>
-                            <p><a href="Home.jsp" style="text-decoration:none;">Prospecs</a></p>
-                            <p><a href="Home.jsp" style="text-decoration:none;">Empresas Suspects</a></p>
-                            <p><a href="ConsultaProjeto.jsp" style="text-decoration:none;">Projetos</a></p>
+                            <p><a href="Home.jsp" style="text-decoration:none;">Prospects</a></p>
+                            <p><a href="Home.jsp" style="text-decoration:none;">Suspects</a></p>
 
                         </div>
                     </div>
@@ -80,10 +80,13 @@
                     <div class="dropdown">
                         <a class="nav-link js-scroll-trigger">Cadastrar</a>
                         <div class="dropdown-content">
-                            <p><a href="CadastrarClientMapping.jsp" style="text-decoration:none;">Client Mapping</a></p>
-                            <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Cliente</a></p>
                             <p><a href="CadastrarProjeto.jsp" style="text-decoration:none;">Projeto</a></p>
+                            <p><a href="CadastrarClientMapping.jsp" style="text-decoration:none;">Client Mapping</a></p>
+                            <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Clientes</a></p>
+                            <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Prospects</a></p>
+                            <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Suspects</a></p>
 
+                            
                         </div>
                     </div>
 
@@ -94,7 +97,10 @@
                         <div class="dropdown-content">
                             <p><a href="Exportar?acaoreport=ListarProjetos" style="text-decoration:none;">Listar Projetos</a></p>
                             <p><a href="Exportar?acaoreport=ListarClientMapping" style="text-decoration:none;">Listar Client Mapping</a></p>
-                            <p><a href="Exportar?acaoreport=ListarClientes" style="text-decoration:none;">Listar Clientes ??????</a></p>
+                            <p><a href="Exportar?acaoreport=ListarClientes" style="text-decoration:none;">Listar Clientes Ativos</a></p>
+                            <p><a href="Exportar?acaoreport=ListarProspects" style="text-decoration:none;">Listar Prospects</a></p>
+                            <p><a href="Exportar?acaoreport=ListarSuspects" style="text-decoration:none;">Listar Suspects</a></p>
+
                         </div>
                     </div>
 
@@ -102,7 +108,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="Home.jsp">Sair</a>
+                    <a class="nav-link js-scroll-trigger" href="Logout.jsp">Sair</a>
                 </li>
 
                 <li class="nav-item">

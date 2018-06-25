@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mcibrasil.blcontrol.dao;
+package com.mcibrasil.blcontrol.dao.Prospects;
 
+import com.mcibrasil.blcontrol.dao.Conexao.Conexao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
@@ -12,11 +13,11 @@ import java.sql.ResultSet;
  *
  * @author paulo.bezerra
  */
-public class ProjetosDAO {
+public class ProspectsDAO {
 
     private Connection conexao = null;
 
-    public ResultSet PesquisarProjetosGeral() {
+    public ResultSet PesquisarProspectsGeral() {
 
         String selectgeral = "";
 
@@ -29,7 +30,7 @@ public class ProjetosDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from projetos order by area";
+            selectgeral = "select * from prospects order by datacadastro";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {
@@ -46,9 +47,8 @@ public class ProjetosDAO {
         return null;
     }
 
-    public ResultSet BuscarProjeto(String valorbusca) {
+    public ResultSet BuscarProspect(String valorbusca) {
 
-        String selectcodigo = "";
         String selectnome = "";
 
         Conexao bancoconexao = new Conexao();
@@ -61,21 +61,11 @@ public class ProjetosDAO {
 
             java.sql.Statement st = conexao.createStatement();
 
-            if (valorbusca.trim().length() > 4) {
-                selectnome = "select * from projetos where projectname like '%" + valorbusca.trim() + "%'";
-                ResultSet resultnome = st.executeQuery(selectnome);
+            selectnome = "select * from prospects where empresa like '" + valorbusca.trim() + "'";
+            ResultSet resultnome = st.executeQuery(selectnome);
+
+            if (selectnome != null) {
                 return resultnome;
-
-            } else if (valorbusca.trim().length() == 4) {
-                selectcodigo = "select * from projetos where projectanalcode = '" + valorbusca.trim() + "'";
-                ResultSet resultcodigo = st.executeQuery(selectcodigo);
-                return resultcodigo;
-
-            } else if (valorbusca.trim().length() < 4) {
-                selectnome = "select * from projetos where projectname like '%" + valorbusca.trim() + "%'";
-                ResultSet resultnome = st.executeQuery(selectnome);
-                return resultnome;
-
             }
 
             conexao.close();

@@ -16,6 +16,8 @@
         <!-- Custom styles for this template -->
         <link href="dashboard.css" rel="stylesheet">
     </head>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 
     <body>
         <%@include  file="navbar.jsp" %>
@@ -66,72 +68,110 @@
                     </div>
                 </nav>
 
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
+                <div id="chartContainer" style="height: 450px; width:80%;">
 
-                    </div>
-
-                    <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-
-                </main>
+                </div>
             </div>
-        </div>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+            <script src="../../assets/js/vendor/popper.min.js"></script>
+            <script src="../../dist/js/bootstrap.min.js"></script>
 
-        <!-- Icons -->
-        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-        <script>
-            feather.replace()
-        </script>
+            <!-- Icons -->
+            <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+            <script>
+                feather.replace()
+            </script>
 
-        <!-- Graphs -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-        <script>
+            <!-- Graphs -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
-            var janeiro = "${janeiro}"
-            var fevereiro = "${fevereiro}"
-            var marco = "${marco}"
-            var abril = "${abril}"
-            var maio = "${maio}"
-            var junho = "${junho}"
-            var julho = "${julho}"
+            
+            
+            <script type="text/javascript">
+                window.onload = function () {
+                    var janeiro = "${janeiro}"
+                    var fevereiro = "${fevereiro}"
+                    var marco = "${marco}"
+                    var abril = "${abril}"
+                    var maio = "${maio}"
+                    var junho = "${junho}"
+                    var julho = "${julho}"
+                    var chart = new CanvasJS.Chart("chartContainer",
+                            {
+                                title: {
+                                    text: "Quick DashBoard"
+                                },
+                                data: [
+                                    {
+                                        type: "line",
+                                        dataPoints: [
+                                            {x: 10, y: 21},
+                                            {x: 20, y: 25},
+                                            {x: 30, y: 20},
+                                            {x: 40, y: 25},
+                                            {x: 50, y: 27},
+                                            {x: 60, y: 28},
+                                            {x: 70, y: 28},
+                                            {x: 80, y: 24},
+                                            {x: 90, y: 26}
 
+                                        ]
+                                    },
+                                    {
+                                        type: "line",
+                                        dataPoints: [
+                                            {x: 10, y: 31},
+                                            {x: 20, y: 35},
+                                            {x: 30, y: 30},
+                                            {x: 40, y: 35},
+                                            {x: 50, y: 35},
+                                            {x: 60, y: 38},
+                                            {x: 70, y: 38},
+                                            {x: 80, y: 34},
+                                            {x: 90, y: 44}
 
-            var ctx = document.getElementById("myChart");
-            var myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ["January", "February", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                    datasets: [{
-                            data: [1600, 1200, 18483, 24003, 23489, 24092, 12034, 1600, 1200, 18483, 24003, 23489, 24092, 12034],
-                            lineTension: 0,
-                            backgroundColor: 'transparent',
-                            borderColor: '#007bff',
-                            borderWidth: 4,
-                            pointBackgroundColor: '#007bff'
-                        }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }]
-                    },
-                    legend: {
-                        display: false,
-                    }
+                                        ]
+                                    },
+                                    {
+                                        type: "line",
+                                        dataPoints: [
+                                            {x: 10, y: 45},
+                                            {x: 20, y: 50},
+                                            {x: 30, y: 40},
+                                            {x: 40, y: 45},
+                                            {x: 50, y: 45},
+                                            {x: 60, y: 48},
+                                            {x: 70, y: 43},
+                                            {x: 80, y: 41},
+                                            {x: 90, y: 28}
+
+                                        ]
+                                    },
+                                    {
+                                        type: "line",
+                                        dataPoints: [
+                                            {x: 10, y: 71},
+                                            {x: 20, y: 55},
+                                            {x: 30, y: 50},
+                                            {x: 40, y: 65},
+                                            {x: 50, y: 95},
+                                            {x: 60, y: 68},
+                                            {x: 70, y: 28},
+                                            {x: 80, y: 34},
+                                            {x: 90, y: 14}
+
+                                        ]
+                                    }
+                                ]
+                            });
+
+                    chart.render();
                 }
-            });
-        </script>
+            </script>
     </body>
 </html>

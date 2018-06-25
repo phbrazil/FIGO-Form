@@ -50,9 +50,9 @@ public class ConsultasProjetosServlet extends HttpServlet {
 
         request.setAttribute("valorbusca", null);
 
-        request.setAttribute("resultadoprojetos", resultado);
+        request.setAttribute("projetos", resultado);
 
-        request.getRequestDispatcher("ConsultaProjetosResultado.jsp").forward(request, response);
+        request.getRequestDispatcher("ListarProjetos.jsp").forward(request, response);
 
     }
 

@@ -83,7 +83,7 @@
                             <p><a href="CadastrarProjeto.jsp" style="text-decoration:none;">Projeto</a></p>
                             <p><a href="CadastrarClientMapping.jsp" style="text-decoration:none;">Client Mapping</a></p>
                             <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Clientes</a></p>
-                            <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Prospects</a></p>
+                            <p><a href="CadastrarProspect.jsp" style="text-decoration:none;">Prospects</a></p>
                             <p><a href="CadastrarCliente.jsp" style="text-decoration:none;">Suspects</a></p>
 
                             

@@ -107,7 +107,7 @@
                     <td><%=clientmapping.getString("questao10")%></td>
                     <td><%=clientmapping.getString("questao11")%></td>
 
-                    <td><button type="submit" class="button" formaction="ConsultaProposta?propostaid=<%=clientmapping.getString("mappingid")%>">Alterar</button></td>
+                    <td><button type="submit" class="button" formaction="ConsultaClientMapping?mappingid=<%=clientmapping.getString("mappingid")%>">Alterar</button></td>
 
                     <%
 

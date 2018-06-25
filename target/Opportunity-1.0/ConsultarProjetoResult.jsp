@@ -2,7 +2,6 @@
     Created on : june 20, 2018, 11:13:17 PM
     Author     : paulo.bezerra
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +14,7 @@
                 document.getElementById('rua').value = ("");
                 document.getElementById('bairro').value = ("");
                 document.getElementById('cidade').value = ("");
+                document.getElementById('uf').value = ("");
             }
 
             function meu_callback(conteudo) {
@@ -23,6 +23,7 @@
                     document.getElementById('rua').value = (conteudo.logradouro);
                     document.getElementById('bairro').value = (conteudo.bairro);
                     document.getElementById('cidade').value = (conteudo.localidade);
+                    document.getElementById('uf').value = (conteudo.uf);
                 } //end if.
                 else {
                     //CEP não Encontrado.
@@ -49,6 +50,7 @@
                         document.getElementById('rua').value = "...";
                         document.getElementById('bairro').value = "...";
                         document.getElementById('cidade').value = "...";
+                        document.getElementById('uf').value = "...";
 
                         //Cria um elemento javascript.
                         var script = document.createElement('script');
@@ -91,7 +93,7 @@
 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar Cliente</title>
+        <title>Cadastrar Projeto</title>
 
     </head>
 
@@ -101,7 +103,7 @@
 
 
 
-        <form name = "CadastrarCliente" action="${pageContext.request.contextPath}/CadastrarCliente" method="POST">
+        <form name = "ProjetosConsulta" action="${pageContext.request.contextPath}/ProjetosServlet" method="POST">
 
             <div id="includedContent"></div>
 
@@ -114,30 +116,21 @@
                 <div class="container">
                     <div class="py-5 text-center">
                         <!--img class="d-block mx-auto mb-4" src="img/LogoPetMaster.png" alt="" width="200" height="200"-->
-                        <h2>Cadastrar Cliente</h2>
+                        <h2>Cadastrar Projeto</h2>
                     </div>
                 </div>
 
 
                 <div class="col-md-8 order-md-1">
-                    <div class="mb-3">
-                        <label for="primeironome">CardName / Razão Social</label>
-                        <div class="input-group">
-                            <input name="cardname" type="text" class="form-control" id="cardname" placeholder="" value=""  maxlength ="60" required>
-                            <div class="invalid-feedback">
-                                CardName necessário
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="mb-3">
-                        <label>CardCode / CNPJ ou CPF</label>
+                        <label for="cpf">CNPJ do cliente</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"></span>
                             </div>
 
-                            <input onkeydown="javascript: fMasc(this, mCNPJ());" type="text" class="form-control" id="cpf" name="cnpjcliente" maxlength="20" placeholder="0000.000.00000" required>
+                            <input onkeydown="javascript: fMasc(this, mCNPJ());" type="text" value = "${resultado.cnpj}" class="form-control" id="cpf" name="cnpjcliente" maxlength="20" placeholder="0000.000.00000" required>
 
                             <div class="invalid-feedback" style="width: 100%;">
                                 CNPJ obrigatório.
@@ -146,56 +139,19 @@
                     </div>
 
                     <div class="mb-3">
-                        <label>Card Foreign Name / Nome Fantasia</label>
+                        <label for="primeironome">Nome do Cliente</label>
                         <div class="input-group">
-                            <input name="nomefantasia" type="text" class="form-control" id="nomefantasia" placeholder="" value=""  maxlength ="60" required>
+                            <input name="nomecliente" type="text" class="form-control" id="nomecliente" placeholder="" value="" name="nomecliente" maxlength ="60" required>
                             <div class="invalid-feedback">
                                 Primeiro nome necessário
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label>Site / Site</label>
-                        <div class="input-group">
-                            <input name="site" type="text" class="form-control" id="nomefantasia" placeholder="" value=""  maxlength ="60" required>
-                            <div class="invalid-feedback">
-                                Site necessário
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-3 mb-3">
-                            <label>Phone1 / DDD</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "phone1" type="text" class="form-control" id="tel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "">
-                            <div class="invalid-feedback">
-                                Telefone obrigatório
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 mb-3">
-                            <label>Phone2 / DDD</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name ="phone2" type="text" class="form-control" id="cel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "" required>
-                            <div class="invalid-feedback">
-                                Telefone obrigatório
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="primeironome">Main Contact name / Pessoa de contato</label>
-                            <div class="input-group">
-                                <input name="maincontact" type="text" class="form-control" id="maincontact" placeholder="" value="" maxlength ="60" required>
-                                <div class="invalid-feedback">
-                                    Contato necessário
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="mb-3">
-                        <label for="primeironome">Contact's Title / Cargo pessoa de contato</label>
+                        <label for="primeironome">Contato no Cliente</label>
                         <div class="input-group">
-                            <input name="contactname" type="text" class="form-control" id="contactname" placeholder="" value="" maxlength ="60" required>
+                            <input name="contatocliente" type="text" class="form-control" id="nomecliente" placeholder="" value="" maxlength ="60" required>
                             <div class="invalid-feedback">
                                 Contato necessário
                             </div>
@@ -204,7 +160,7 @@
 
 
                     <div class="mb-3">
-                        <label for="email">Email address / Email</label>
+                        <label for="email">Email<span class="text-muted"> (Opcional)</span></label>
                         <input name ="email" type="email" class="form-control" id="email" placeholder="cliente@exemplo.com" maxlength ="30" value ="">
                         <div class="invalid-feedback">
                             Favor inserir um email válido.
@@ -213,60 +169,41 @@
                     <div class="row">
                         <div class="col-md-3 mb-3">
 
-                            <label>ZipCode / cep</label>
+                            <label>CEP</label>
                             <input name ="cep" type="text" class="form-control" id="cep"   placeholder="00000000" size="10" maxlength="8" required onblur="pesquisacep(this.value);">
                             <div class="invalid-feedback">
                                 CEP obrigatório
                             </div>
                         </div>
 
-                        <div class="col-md-6 mb-3">
-                            <label>Street / Rua</label>
-                            <input name ="rua" type="text" class="form-control" id="rua"  size="60" maxlength ="50" required>
+                        <div class="col-md-8 mb-3">
+                            <label>Rua</label>
+                            <input name ="rua" type="text" class="form-control" id="rua" placeholder="Rua hum 1234"  size="60" maxlength ="50" required>
 
                             <div class="invalid-feedback">
                                 Favor inserir a Rua
                             </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <label>Street No / Número</label>
-                            <input name ="numero" type="text" class="form-control" id="numero" size="60" maxlength ="50" required>
-
-                            <div class="invalid-feedback">
-                                Favor inserir o Numero
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label>Building Floor Room / Complemento</label>
-                            <input name ="complemento" type="text" class="form-control" id="numero" size="60" maxlength ="50" required>
-
-                            <div class="invalid-feedback">
-                                Favor inserir o Complemento
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label>Block / Bairro</label>
-                            <input name ="bairro" type="text" class="form-control" id="bairro" size="60" maxlength ="50" required>
-
-                            <div class="invalid-feedback">
-                                Favor inserir o Bairro
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="mb-3">
+                        <label>Bairro</label>
+                        <input name ="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro" size="40" maxlength ="50" required>
+                        <div class="invalid-feedback">
+                            Favor inserir o Bairro.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Cidade</label>
+                        <input name ="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" size = "40" maxlength ="50" required>
+                        <div class="invalid-feedback">
+                            Favor inserir a Cidade.
+                        </div>
+                    </div>
+
 
                     <div class="row">
                         <div class="col-md-5 mb-3">
-                            <label>City / Cidade</label>
-                            <input name ="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" size = "40" maxlength ="50" required>
-                            <div class="invalid-feedback">
-                                Favor inserir a Cidade.
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3 mb-3">
-                            <label>Country /País</label>
+                            <label>País</label>
                             <select name ="pais" class="custom-select d-block w-100" id="pais" required>
                                 <option>Brasil</option>
                             </select>
@@ -275,7 +212,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>State / Estado</label>
+                            <label>Estado</label>
                             <select name = "estado" class="custom-select d-block w-100" id="estado"  required>
                                 <option>Acre</option>
                                 <option>Alagoas</option>
@@ -310,108 +247,57 @@
                                 Favor selecionar um Estado..
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label>Inscrição Estadual</label>
-                                <input name ="inscricest" type="text" class="form-control" id="inscricest" size="60" maxlength ="50" required>
 
-                                <div class="invalid-feedback">
-                                    Favor inserir a inscrição
-                                </div>
+                        <div class="col-md-3 mb-3">
+                            <label  for="uf">UF</label>
+                            <select name = "uf" class="custom-select d-block w-100" id="uf"  required>
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
+                                <option>MG</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+                            </select>
+
+                            <div class="invalid-feedback">
+                                Favor selecionar uma UF..
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Inscrição Municipal</label>
-                                <input name ="inscricmunic" type="text" class="form-control" id="inscricmunic" size="60" maxlength ="50" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir a inscrição
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Cnae / Cnae</label>
-                                <input name ="cnae" type="text" class="form-control" id="cnae" size="60" maxlength ="50" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir a inscrição
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Bank / Banco</label>
-                                <input name ="bank" type="text" class="form-control" id="bank" size="60" maxlength ="50" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir o Banco
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Agency / Agencia</label>
-                                <input name ="agencia" type="number" class="form-control" id="agencia" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir a Agencia
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Agency Digit / Dígito Agencia</label>
-                                <input name ="agenciadigito" type="number" class="form-control" id="agenciadigito" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir a Agencia
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Account / Conta</label>
-                                <input name ="account" type="number" class="form-control" id="account" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir a Conta
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Account Digit / Dígito Conta</label>
-                                <input name ="accountdigito" type="number" class="form-control" id="accountdigito" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir o Digito
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Invoice Term / Prazo de pagamento acordado</label>
-                                <input name ="invoice" type="text" class="form-control" id="invoice" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir o Invoice
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label>Pricing type / Fee ou Rebate</label>
-                                <input name ="pricing" type="text" class="form-control" id="pricing" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir o Invoice
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Billing form  / Forma de faturamento</label>
-                                <input name ="billingform" type="text" class="form-control" id="billingform" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir o Billing
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>Notes / Observações</label>
-                                <input name ="notes" type="text" class="form-control" id="notes" required>
-
-                                <div class="invalid-feedback">
-                                    Favor inserir o Notes
-                                </div>
-                            </div>
-
-
                         </div>
-
+                        <div class="col-md-3 mb-3">
+                            <label for="telefone">Telefone</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "telefone" type="text" class="form-control" id="tel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                Telefone obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="celular">Celular</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name ="celular" type="text" class="form-control" id="cel" placeholder="(xx)xxxxx-xxxx" maxlength="14" value = "" required>
+                            <div class="invalid-feedback">
+                                Celular obrigatório
+                            </div>
+                        </div>
 
 
                         <hr class="mb-4">

@@ -87,7 +87,7 @@
 
                     <td><%=linha%></td>
                     <td><%=prospects.getString("empresa")%></td>
-                    <td><%=prospects.getString("nome")%></td>
+                    <td><%=prospects.getString("nomecontato")%></td>
                     <td><%=prospects.getString("telefone1")%></td>
                     <td><%=prospects.getString("telefone2")%></td>
                     <td><%=prospects.getString("email")%></td>

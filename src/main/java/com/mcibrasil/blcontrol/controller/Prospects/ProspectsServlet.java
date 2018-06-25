@@ -42,7 +42,7 @@ public class ProspectsServlet extends HttpServlet {
         String cargo = request.getParameter("cargo");
         String origem = request.getParameter("origem");
         String hub = request.getParameter("hub");
-        String travel = request.getParameter("travek");
+        String travel = request.getParameter("travel");
         String contatomci = request.getParameter("contatomci");
         
         Prospects prospects = new Prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci);

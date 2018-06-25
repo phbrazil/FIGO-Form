@@ -89,7 +89,7 @@ public class SuspectsDAO {
             Connection conexao = bancoconexao.getConnection();
 
             String query = ("INSERT INTO suspects (empresa, nomecontato,telefone1,"
-                    + "telefone2, email,cargo, origem, hub, eventos, incentivos, datacadastro,user)"
+                    + "telefone2, email,cargo, origem, eventos, incentivos, contatomci, datacadastro,user)"
                     + " VALUES (?,?,?,?,?,?,?,?,?,?,now(),'paulo bezerra')");
 
             PreparedStatement preparedStmt = conexao.prepareStatement(query);

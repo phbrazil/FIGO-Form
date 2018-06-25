@@ -22,13 +22,16 @@ public class Conexao {
     private String password = "0c24a188a9";
     private Connection conexao = null;
 
-    public  Connection getConnection() throws SQLException {
+    /*
+    CREATE USER 'mci'@'localhost' IDENTIFIED BY '0c24a188a9';
+    GRANT ALL PRIVILEGES ON * . * TO 'mci'@'localhost';
+     */
+    public Connection getConnection() throws SQLException {
 
         try {
             Class.forName(driver);
             if (conexao == null) {
-                
-                
+
                 conexao = DriverManager.getConnection(url, userName, password);
             }
         } catch (Exception e) {

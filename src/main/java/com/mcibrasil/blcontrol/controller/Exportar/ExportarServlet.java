@@ -57,7 +57,7 @@ public class ExportarServlet extends HttpServlet {
             acaoreport = null;
 
             request.setAttribute("projetos", exportproj);
-            request.getRequestDispatcher("ExportProjetos.jsp").forward(request, response);
+            request.getRequestDispatcher("Exportar/ExportProjetos.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarClientMapping")) {
 
@@ -80,7 +80,7 @@ public class ExportarServlet extends HttpServlet {
             acaoreport = null;
 
             request.setAttribute("clientmapping", exportclientmapping);
-            request.getRequestDispatcher("ExportClientMapping.jsp").forward(request, response);
+            request.getRequestDispatcher("Exportar/ExportClientMapping.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarProspects")) {
 
@@ -102,7 +102,7 @@ public class ExportarServlet extends HttpServlet {
             acaoreport = null;
 
             request.setAttribute("prospects", exportprospect);
-            request.getRequestDispatcher("ExportProspects.jsp").forward(request, response);
+            request.getRequestDispatcher("Exportar/ExportProspects.jsp").forward(request, response);
 
         } else if (acaoreport.equals("ListarSuspects")) {
 
@@ -124,7 +124,7 @@ public class ExportarServlet extends HttpServlet {
             acaoreport = null;
 
             request.setAttribute("suspects", exportsuspects);
-            request.getRequestDispatcher("ExportSuspects.jsp").forward(request, response);
+            request.getRequestDispatcher("Exportar/ExportSuspects.jsp").forward(request, response);
 
         }
 

@@ -32,10 +32,14 @@
         <br>
         <br>
         <div align ="center">
-            <!--h1 class="mb-0">Olá
-                <span class="text-primary"><c:out value="${NomeDoUser}"/></span>
-            </h1-->
             <img class="mb-4" src="img/mci_logo.png" alt="logo MCI" width="200" height="200">
+
+
+            <div class="container">
+                <div class="py-5 text-center">
+                    <a href ="Dashboard.jsp">Access the Quick Dashboard</a>
+                </div>
+            </div>
 
         <!--p class="mb-1">Sessão ${idsessao}</p-->
 

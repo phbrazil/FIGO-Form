@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../../../favicon.ico">
 
-        <title>Dashboard Template for Bootstrap</title>
+        <title>Quick Dashboard</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href="Exportar?acaoreport=ListarProjetos">
                                     <span data-feather="home"></span>
                                     Projects <span class="sr-only">(current)</span>
                                 </a>
@@ -105,7 +105,7 @@
                     var chart = new CanvasJS.Chart("chartContainer",
                             {
                                 title: {
-                                    text: "Quick DashBoard"
+                                    text: "Won Projects Percentage"
                                 },
                                 data: [
                                     {

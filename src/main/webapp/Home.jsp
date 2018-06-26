@@ -37,7 +37,7 @@
 
             <div class="container">
                 <div class="py-5 text-center">
-                    <a href ="Dashboard?type=Won" style="text-decoration:none;">Access the Quick Dashboard</a>
+                    <a href ="Dashboard?type=Confirmed" style="text-decoration:none;">Access the Quick Dashboard</a>
                 </div>
             </div>
 

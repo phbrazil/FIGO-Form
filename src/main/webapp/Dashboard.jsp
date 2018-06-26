@@ -9,8 +9,8 @@
         <link rel="icon" href="../../../../favicon.ico">
 
         <title>Quick Dashboard</title>
-        
-        
+
+
         <!--ESSE SITE AQUI AJUDA A FORMATAR-->
         <!--https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/labels-index-labels/-->
 
@@ -25,6 +25,7 @@
 
     <body>
         <%@include  file="navbar.jsp" %>
+
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">MCI Brasil</a>
         </nav>
@@ -53,9 +54,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Dashboard?type=Won">
+                                <a class="nav-link" href="Dashboard?type=Confirmed">
                                     <span data-feather="file"></span>
-                                    Won
+                                    Confirmed
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -73,6 +74,9 @@
                 <div id="chartContainer" style="height: 450px; width:80%;">
 
                 </div>
+                
+                <!--div id='one'></div-->
+
 
             </div>
 
@@ -90,13 +94,9 @@
                 feather.replace()
             </script>
 
-            <!-- Graphs -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
-
 
             <script type="text/javascript">
-                
+
                 window.onload = function () {
                     var janeiro = "${janeiro}"
                     var fevereiro = "${fevereiro}"
@@ -111,18 +111,18 @@
                     var novembro = "${novembro}"
                     var dezembro = "${dezembro}"
                     var type = "${type}"
-                    
+
                     var teste = 15
                     var chart = new CanvasJS.Chart("chartContainer",
                             {
                                 title: {
-                                    text: type+" Projects Percentage"
+                                    text: type + " Projects Percentage"
                                 },
                                 data: [
                                     {
                                         type: "pie",
                                         dataPoints: [
-                                            {x: 10, y: teste, label: "Janeiro"},
+                                            {x: 10, y: janeiro, label: "Janeiro"},
                                             {x: 20, y: 25, label: "Fevereiro"},
                                             {x: 30, y: 20, label: "Março"},
                                             {x: 40, y: 25, label: "Abril"},
@@ -141,7 +141,45 @@
                             });
 
                     chart.render();
-            }
+                }
+            </script>
+            <script>
+                (function () {
+                    var vars = [];
+                    var c = new CanvasJS.Chart('one', {
+                        data: [{
+                                name: 'Base',
+                                type: 'pie',
+                                markerType: 'none',
+                                color: 'rgba(0,0,0,.7)',
+                                dataPoints: [{
+                                        x: 10,
+                                        y: 20
+                                    }, {
+                                        x: 40,
+                                        y: 25
+                                    }]
+                            }]
+                    });
+
+                    c.render();
+
+                    function getGlobals() {
+                        var ignore = ['window', 'document', 'InstallTrigger', 'console', 'CanvasJS', 'navigator', 'getInterface', 'external', 'sidebar', 'top', 'location']
+
+                        for (var key in this) {
+                            if (this.hasOwnProperty(key) && ignore.indexOf(key) === -1) {
+                                vars.push(key);
+                            }
+                        }
+                        return vars;
+                    }
+
+                    var globals = getGlobals();
+
+                    console.log(globals, globals.length);
+
+                }).call(this);
             </script>
 
     </body>

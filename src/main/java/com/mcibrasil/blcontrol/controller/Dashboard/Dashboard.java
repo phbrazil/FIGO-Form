@@ -5,6 +5,7 @@
  */
 package com.mcibrasil.blcontrol.controller.Dashboard;
 
+import com.mcibrasil.blcontrol.dao.Dashboard.DashboardDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,23 +26,43 @@ public class Dashboard extends HttpServlet {
 
         String type = request.getParameter("type");
 
-        if (type.equals("Won")) {
+        if (type.toUpperCase().equals("CONFIRMED")) {
 
+            DashboardDAO dashboarddao = new DashboardDAO();
+
+            int janeiro = dashboarddao.Dashboard(type);
+
+            request.setAttribute("janeiro", janeiro);
             request.setAttribute("type", type);
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
-        } else if (type.equals("Lost")) {
-            
+        } else if (type.toUpperCase().equals("LOST")) {
+
+            DashboardDAO dashboarddao = new DashboardDAO();
+
+            int janeiro = dashboarddao.Dashboard(type);
+
+            request.setAttribute("janeiro", janeiro);
             request.setAttribute("type", type);
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
-        } else if (type.equals("Open")) {
-            
+        } else if (type.toUpperCase().equals("OPEN")) {
+
+            DashboardDAO dashboarddao = new DashboardDAO();
+
+            int janeiro = dashboarddao.Dashboard(type);
+
+            request.setAttribute("janeiro", janeiro);
             request.setAttribute("type", type);
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
-        }else if (type.equals("Canceled")) {
-            
+        } else if (type.toUpperCase().equals("CANCELED")) {
+
+            DashboardDAO dashboarddao = new DashboardDAO();
+
+            int janeiro = dashboarddao.Dashboard(type);
+
+            request.setAttribute("janeiro", janeiro);
             request.setAttribute("type", type);
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 

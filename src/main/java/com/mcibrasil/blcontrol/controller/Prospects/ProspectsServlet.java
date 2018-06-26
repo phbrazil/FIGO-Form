@@ -5,10 +5,7 @@
  */
 package com.mcibrasil.blcontrol.controller.Prospects;
 
-import com.mcibrasil.blcontrol.controller.ClientMapping.*;
-import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
 import com.mcibrasil.blcontrol.dao.Prospects.ProspectsDAO;
-import com.mcibrasil.blcontrol.model.ClientMapping.ClientMapping;
 import com.mcibrasil.blcontrol.model.Prospects.Prospects;
 import java.io.IOException;
 import javax.servlet.ServletException;

@@ -5,9 +5,7 @@
  */
 package com.mcibrasil.blcontrol.dao.Suspects;
 
-import com.mcibrasil.blcontrol.dao.Prospects.*;
 import com.mcibrasil.blcontrol.dao.Conexao.Conexao;
-import com.mcibrasil.blcontrol.model.Prospects.Prospects;
 import com.mcibrasil.blcontrol.model.Suspects.Suspects;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

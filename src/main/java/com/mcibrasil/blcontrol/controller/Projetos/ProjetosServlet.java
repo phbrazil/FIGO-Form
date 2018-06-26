@@ -5,7 +5,6 @@
  */
 package com.mcibrasil.blcontrol.controller.Projetos;
 
-import com.mcibrasil.blcontrol.model.ClientMapping.ClientMapping;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

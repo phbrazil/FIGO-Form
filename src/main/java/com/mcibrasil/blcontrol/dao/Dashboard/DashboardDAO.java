@@ -5,7 +5,6 @@
  */
 package com.mcibrasil.blcontrol.dao.Dashboard;
 
-import com.mcibrasil.blcontrol.dao.Projetos.*;
 import com.mcibrasil.blcontrol.dao.Conexao.Conexao;
 import java.sql.Connection;
 import java.sql.ResultSet;

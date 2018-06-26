@@ -6,16 +6,8 @@
 package com.mcibrasil.blcontrol.controller.Projetos;
 
 import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
-import com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO;
-import java.awt.List;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

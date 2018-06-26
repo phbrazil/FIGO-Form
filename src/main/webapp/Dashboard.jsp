@@ -41,25 +41,25 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Dashboard?type=Open">
                                     <span data-feather="file"></span>
                                     Open
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Dashboard?type=Lost">
                                     <span data-feather="file"></span>
-                                    Closed
+                                    Lost
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Dashboard?type=Won">
                                     <span data-feather="file"></span>
-                                    Confirmed
+                                    Won
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Dashboard?type=Canceled">
                                     <span data-feather="file"></span>
                                     Canceled
                                 </a>
@@ -70,7 +70,7 @@
                 </nav>
                 <br>
 
-                <div id="chartContainerWon" style="height: 450px; width:80%;">
+                <div id="chartContainer" style="height: 450px; width:80%;">
 
                 </div>
 
@@ -96,6 +96,7 @@
 
 
             <script type="text/javascript">
+                
                 window.onload = function () {
                     var janeiro = "${janeiro}"
                     var fevereiro = "${fevereiro}"
@@ -109,12 +110,13 @@
                     var outubro = "${outubro}"
                     var novembro = "${novembro}"
                     var dezembro = "${dezembro}"
+                    var type = "${type}"
                     
                     var teste = 15
-                    var chartwon = new CanvasJS.Chart("chartContainerWon",
+                    var chart = new CanvasJS.Chart("chartContainer",
                             {
                                 title: {
-                                    text: "Won Projects Percentage"
+                                    text: type+" Projects Percentage"
                                 },
                                 data: [
                                     {
@@ -138,7 +140,7 @@
                                 ]
                             });
 
-                    chartwon.render();
+                    chart.render();
             }
             </script>
 

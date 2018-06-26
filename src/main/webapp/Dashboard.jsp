@@ -101,6 +101,7 @@
                     var maio = "${maio}"
                     var junho = "${junho}"
                     var julho = "${julho}"
+                    var teste = 10
                     var chart = new CanvasJS.Chart("chartContainer",
                             {
                                 title: {
@@ -108,66 +109,25 @@
                                 },
                                 data: [
                                     {
-                                        type: "line",
+                                        type: "pie",
                                         dataPoints: [
-                                            {x: 10, y: 21},
-                                            {x: 20, y: 25},
-                                            {x: 30, y: 20},
-                                            {x: 40, y: 25},
-                                            {x: 50, y: 27},
-                                            {x: 60, y: 28},
-                                            {x: 70, y: 28},
-                                            {x: 80, y: 24},
-                                            {x: 90, y: 26}
+                                            {x: 10, y: teste, label: "Janeiro"},
+                                            {x: 20, y: 25, label: "Fevereiro"},
+                                            {x: 30, y: 20, label: "Março"},
+                                            {x: 40, y: 25, label: "Abril"},
+                                            {x: 50, y: 27, label: "Maio"},
+                                            {x: 60, y: 28, label: "Junho"},
+                                            {x: 70, y: 28, label: "Julho"},
+                                            {x: 80, y: 24, label: "Agosto"},
+                                            {x: 90, y: 26, label: "Setembro"},
+                                            {x: 100, y: 26, label: "Outubro"},
+                                            {x: 110, y: 26, label: "Novembro"},
+                                            {x: 120, y: 26, label: "Dezembro"}
 
                                         ]
                                     },
-                                    {
-                                        type: "line",
-                                        dataPoints: [
-                                            {x: 10, y: 31},
-                                            {x: 20, y: 35},
-                                            {x: 30, y: 30},
-                                            {x: 40, y: 35},
-                                            {x: 50, y: 35},
-                                            {x: 60, y: 38},
-                                            {x: 70, y: 38},
-                                            {x: 80, y: 34},
-                                            {x: 90, y: 44}
-
-                                        ]
-                                    },
-                                    {
-                                        type: "line",
-                                        dataPoints: [
-                                            {x: 10, y: 45},
-                                            {x: 20, y: 50},
-                                            {x: 30, y: 40},
-                                            {x: 40, y: 45},
-                                            {x: 50, y: 45},
-                                            {x: 60, y: 48},
-                                            {x: 70, y: 43},
-                                            {x: 80, y: 41},
-                                            {x: 90, y: 28}
-
-                                        ]
-                                    },
-                                    {
-                                        type: "line",
-                                        dataPoints: [
-                                            {x: 10, y: 71},
-                                            {x: 20, y: 55},
-                                            {x: 30, y: 50},
-                                            {x: 40, y: 65},
-                                            {x: 50, y: 95},
-                                            {x: 60, y: 68},
-                                            {x: 70, y: 28},
-                                            {x: 80, y: 34},
-                                            {x: 90, y: 14}
-
-                                        ]
-                                    }
-                                ]
+                                    
+                                                                  ]
                             });
 
                     chart.render();

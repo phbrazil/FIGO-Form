@@ -6,6 +6,7 @@
 package com.mcibrasil.blcontrol.dao.Dashboard;
 
 import com.mcibrasil.blcontrol.dao.Conexao.Conexao;
+import com.mcibrasil.blcontrol.model.Dashboard.Dashboard;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
@@ -18,6 +19,8 @@ public class DashboardDAO {
     private Connection conexao = null;
 
     public int Dashboard(String type) {
+        
+        Dashboard dashboard = new Dashboard(null, null, null, null, null, null, null, null, null, null, null, null);
 
         int janeiro = 0;
         int fevereiro;
@@ -50,7 +53,8 @@ public class DashboardDAO {
             while (result.next()) {
 
                 janeiro = result.getInt("quantidade");
-                System.out.println(janeiro);
+                
+                dashboard.setJaneiro(result.getString("quantidade"));
 
             }
 

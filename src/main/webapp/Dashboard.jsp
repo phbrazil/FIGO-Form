@@ -122,7 +122,7 @@
                                     {
                                         type: "pie",
                                         dataPoints: [
-                                            {x: 10, y: janeiro, label: "Janeiro"},
+                                            {x: 10, y: janeiro, label: "Janeiro "+janeiro+"%"},
                                             {x: 20, y: 25, label: "Fevereiro"},
                                             {x: 30, y: 20, label: "Março"},
                                             {x: 40, y: 25, label: "Abril"},

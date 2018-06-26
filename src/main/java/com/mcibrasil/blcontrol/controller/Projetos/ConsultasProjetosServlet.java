@@ -35,6 +35,8 @@ public class ConsultasProjetosServlet extends HttpServlet {
 
         String valorbusca = request.getParameter("valorbusca");
         
+        System.out.println(valorbusca+"  aqui no Servlet");
+        
         ProjetosDAO projetosdao = new ProjetosDAO();
 
         ResultSet resultado = projetosdao.BuscarProjeto(valorbusca);

@@ -53,6 +53,8 @@ public class ProjetosDAO {
         String selectnome = "";
 
         Conexao bancoconexao = new Conexao();
+        
+        System.out.println(valorbusca+" aqui nos projetos");
 
         try {
 

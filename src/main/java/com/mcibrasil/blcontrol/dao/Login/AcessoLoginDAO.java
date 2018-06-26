@@ -29,7 +29,6 @@ public class AcessoLoginDAO {
         boolean usuarionabase = false;
         String select = "";
 
-        //long validado = 0;
         Conexao bancoconexao = new Conexao();
 
         try {

@@ -9,6 +9,10 @@
         <link rel="icon" href="../../../../favicon.ico">
 
         <title>Quick Dashboard</title>
+        
+        
+        <!--ESSE SITE AQUI AJUDA A FORMATAR-->
+        <!--https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/labels-index-labels/-->
 
         <!-- Bootstrap core CSS -->
         <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -62,15 +66,14 @@
                             </li>
 
                         </ul>
-
-
-
                     </div>
                 </nav>
+                <br>
 
-                <div id="chartContainer" style="height: 450px; width:80%;">
+                <div id="chartContainerWon" style="height: 450px; width:80%;">
 
                 </div>
+
             </div>
 
             <!-- Bootstrap core JavaScript
@@ -90,8 +93,8 @@
             <!-- Graphs -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
-            
-            
+
+
             <script type="text/javascript">
                 window.onload = function () {
                     var janeiro = "${janeiro}"
@@ -101,8 +104,14 @@
                     var maio = "${maio}"
                     var junho = "${junho}"
                     var julho = "${julho}"
-                    var teste = 10
-                    var chart = new CanvasJS.Chart("chartContainer",
+                    var agosto = "${agosto}"
+                    var setembro = "${setembro}"
+                    var outubro = "${outubro}"
+                    var novembro = "${novembro}"
+                    var dezembro = "${dezembro}"
+                    
+                    var teste = 15
+                    var chartwon = new CanvasJS.Chart("chartContainerWon",
                             {
                                 title: {
                                     text: "Won Projects Percentage"
@@ -126,12 +135,12 @@
 
                                         ]
                                     },
-                                    
-                                                                  ]
+                                ]
                             });
 
-                    chart.render();
-                }
+                    chartwon.render();
+            }
             </script>
+
     </body>
 </html>

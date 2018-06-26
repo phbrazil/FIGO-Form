@@ -32,7 +32,7 @@ public class ProspectsDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from prospects order by datacadastro";
+            selectgeral = "select * from prospects order by empresa";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {

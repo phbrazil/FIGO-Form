@@ -34,7 +34,7 @@ public class SuspectsDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from suspects order by datacadastro";
+            selectgeral = "select * from suspects order by empresa";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {

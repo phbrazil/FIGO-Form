@@ -117,6 +117,21 @@ datacadastro VARCHAR(20) NOT NULL,
 user VARCHAR(60) NOT NULL,
 PRIMARY KEY (suspectid));
 
+create view dashboardjaneiro2018 as select count(*) as janeiro from projetos where extract(month from datacadastro)='01' and extract(year from datacadastro)='2018';
+create view dashboardfevereiro2018 as select count(*) as fevereiro from projetos where extract(month from datacadastro)='02' and extract(year from datacadastro)='2018';
+create view dashboardmarco2018 as select count(*) as marco from projetos where extract(month from datacadastro)='03' and extract(year from datacadastro)='2018';
+create view dashboardabril2018 as select count(*) as abril from projetos where extract(month from datacadastro)='04' and extract(year from datacadastro)='2018';
+create view dashboardmaio2018 as select count(*) as maio from projetos where extract(month from datacadastro)='05' and extract(year from datacadastro)='2018';
+create view dashboardjunho2018 as select count(*) as junho from projetos where extract(month from datacadastro)='06' and extract(year from datacadastro)='2018';
+create view dashboardjulho2018 as select count(*) as julho from projetos where extract(month from datacadastro)='07' and extract(year from datacadastro)='2018';
+create view dashboardagosto2018 as select count(*) as agosto from projetos where extract(month from datacadastro)='08' and extract(year from datacadastro)='2018';
+create view dashboardsetembro2018 as select count(*) as setembro from projetos where extract(month from datacadastro)='09' and extract(year from datacadastro)='2018';
+create view dashboardoutubro2018 as select count(*) as outubro from projetos where extract(month from datacadastro)='10' and extract(year from datacadastro)='2018';
+create view dashboardnovembro2018 as select count(*) as novembro from projetos where extract(month from datacadastro)='11' and extract(year from datacadastro)='2018';
+create view dashboarddezembro2018 as select count(*) as dezembro from projetos where extract(month from datacadastro)='12' and extract(year from datacadastro)='2018';
+
+
+
 INSERT INTO projetos (clienteid, area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com',now(),'SANOFI','CILAD 2018',2132,now(),'past',now(),30,'vazio',50,'Open','Auditado',100.944,33.139,50,80.474,1,now(),'\\host01\mci$');
 INSERT INTO projetos (clienteid, area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com',now(),'TNT','TNT CAMPUS PARTY',1860,now(),'Past',now(),0,'vazio',1,'Confirmed','AUDITADO',110940.81,33139,0.298708834016986,33139,1,now(),'\\host01\mci$');
 INSERT INTO projetos (clienteid, area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com',now(),'NATULAB','CAMPANHA DE INCENTIVO 2017',1470,now(),'Past',now(),80,'vazio',1,'Confirmed','AUDITADO',0,80704,0,80704,1,now(),'\\host01\mci$');

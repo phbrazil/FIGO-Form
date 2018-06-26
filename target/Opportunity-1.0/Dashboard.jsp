@@ -110,9 +110,9 @@
                     var outubro = "${outubro}"
                     var novembro = "${novembro}"
                     var dezembro = "${dezembro}"
+                    
                     var type = "${type}"
 
-                    var teste = 15
                     var chart = new CanvasJS.Chart("chartContainer",
                             {
                                 title: {

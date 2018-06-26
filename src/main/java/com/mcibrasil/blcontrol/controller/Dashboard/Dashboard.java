@@ -5,12 +5,6 @@
  */
 package com.mcibrasil.blcontrol.controller.Dashboard;
 
-import com.mcibrasil.blcontrol.controller.Prospects.*;
-import com.mcibrasil.blcontrol.controller.ClientMapping.*;
-import com.mcibrasil.blcontrol.dao.Projetos.ProjetosDAO;
-import com.mcibrasil.blcontrol.dao.Prospects.ProspectsDAO;
-import com.mcibrasil.blcontrol.model.ClientMapping.ClientMapping;
-import com.mcibrasil.blcontrol.model.Prospects.Prospects;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,24 +26,23 @@ public class Dashboard extends HttpServlet {
         String type = request.getParameter("type");
 
         if (type.equals("Won")) {
-            System.out.println("entrei no won");
-            request.setAttribute("type", type);
 
+            request.setAttribute("type", type);
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
         } else if (type.equals("Lost")) {
+            
             request.setAttribute("type", type);
-
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
         } else if (type.equals("Open")) {
+            
             request.setAttribute("type", type);
-
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
         }else if (type.equals("Canceled")) {
+            
             request.setAttribute("type", type);
-
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
 
         }

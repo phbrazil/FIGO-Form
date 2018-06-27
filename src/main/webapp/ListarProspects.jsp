@@ -2,6 +2,12 @@
     Created on : june 20, 2018, 11:13:17 PM
     Author     : paulo.bezerra
 --%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Locale"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Calendar"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -79,13 +85,36 @@
                 <%
                     ResultSet prospects = (ResultSet) request.getAttribute("prospects");
                     int linha = 1;
+
+                    String color = "#FFFFFF";
+
+                    String dataatual = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+
+                    Date date1 = formato.parse(dataatual);
+
                     while (prospects.next()) {
 
+                        String datacadastro = prospects.getString("datacadastro");
 
+                        Date date2 = formato.parse(datacadastro);
+
+                        long diferenca = date1.getTime() - date2.getTime();
+                        
+                        System.out.println(diferenca+" diferenca");
+
+                        //SE A DIFERENCA ENTRE O CADASTRO E DATA ATUAL FOR MAIOR QUE 15 DIAS MARCA COMO VERMELHO
+                        if (diferenca > 15) {
+                            color = "ff0000";
+                        }else{
+                            color = "FFFFFF";
+                            
+                        }
                 %>
                 <tr>
 
-                    <td><%=linha%></td>
+                    <td bgcolor='<%=color%>'><%=linha%></td>
                     <td><%=prospects.getString("empresa")%></td>
                     <td><%=prospects.getString("nomecontato")%></td>
                     <td><%=prospects.getString("telefone1")%></td>

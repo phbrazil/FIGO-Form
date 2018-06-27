@@ -71,10 +71,10 @@
                     <td  bgcolor="#33CCCC" align = "center">Event Closing Date</td>
                     <td  bgcolor="#33CCCC" align = "center">Pax Number</td>
                     <td  bgcolor="#33CCCC" align = "center">Cancel Insurance</td>
-                    <td  bgcolor="#33CCCC" align = "center">Probability</td>
+                    <td  bgcolor="#33CCCC" align = "center">Probability %</td>
                     <td  bgcolor="#33CCCC" align = "center">Turn Over forecast Owner</td>
                     <td  bgcolor="#33CCCC" align = "center">GM forecast Owner</td>
-                    <td  bgcolor="#33CCCC" align = "center">GM Turn Over Perc</td>
+                    <td  bgcolor="#33CCCC" align = "center">GM Turn Over %</td>
                     <td  bgcolor="#33CCCC" align = "center">Weighted Prospec</td>
                     <td  bgcolor="#33CCCC" align = "center">Data Cadastro
                     <td  bgcolor="#33CCCC" align = "center">Area</td>
@@ -87,45 +87,25 @@
                 <%
                     ResultSet projetos = (ResultSet) request.getAttribute("projetos");
                     int linha = 1;
+                    String color = "#FFFFFF";
+
                     while (projetos.next()) {
+
+                        if (projetos.getString("projectstatus").toUpperCase().equals("LOST")) {
+                            color = "#ff0000";
+
+                        } else if (projetos.getString("projectstatus").toUpperCase().equals("CONFIRMED")) {
+                            color = "#00FF00";
+                        } else if (projetos.getString("projectstatus").toUpperCase().equals("OPEN")) {
+                            color = "#0000FF";
+                        } else {
+                            color = "#FFFFFF";
+                        }
 
 
                 %>
                 <tr>
-
-                    <%  if (projetos.getString("projectstatus").toUpperCase().contains("OPEN")) {
-
-
-                    %>
-
-                    <td bgcolor="#007FFF"><%=linha%></td>
-                    <td><%=projetos.getString("projectanalcode")%></td>
-                    <td><%=projetos.getString("projectname")%></td>
-                    <td><%=projetos.getString("mcistdcliname")%></td>
-                    <td><%=projetos.getString("projectstatus")%></td>
-                    <td><%=projetos.getString("owner")%></td>
-                    <td><%=projetos.getString("cidade")%></td>
-                    <td><%=projetos.getString("uf")%></td>
-                    <td><%=projetos.getString("propreqdate")%></td>
-                    <td><%=projetos.getString("eventstartdate")%></td>
-                    <td><%=projetos.getString("eventclosingdate")%></td>
-                    <td><%=projetos.getString("paxnumber")%></td>
-                    <td><%=projetos.getString("cancelinsurance")%></td>
-                    <td><%=projetos.getString("probability")%></td>
-                    <td><%=projetos.getString("turnoverforowner")%></td>
-                    <td><%=projetos.getString("gmforowner")%></td>
-                    <td><%=projetos.getString("gmturnoverperc")%></td>
-                    <td><%=projetos.getString("weightedprospec")%></td>
-                    <td><%=projetos.getString("datacadastro")%></td>
-                    <td><%=projetos.getString("area")%></td>
-                    <td><%=projetos.getString("folderpath")%></td>
-                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
-                <tr>
-                    <%
-                    } else if (projetos.getString("projectstatus").toUpperCase().contains("LOST")) {
-
-                    %>
-                    <td bgcolor="#ff0000"><%=linha%></td>
+                    <td bgcolor='<%=color%>'><%=linha%></td>
                     <td><%=projetos.getString("projectanalcode")%></td>
                     <td><%=projetos.getString("projectname")%></td>
                     <td><%=projetos.getString("mcistdcliname")%></td>
@@ -149,62 +129,6 @@
                     <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
 
                     <%
-
-                    } else if (projetos.getString("projectstatus").toUpperCase().contains("CONFIRMED")) {
-
-                    %>                    
-                    <td bgcolor="#32CD32"><%=linha%></td>
-                    <td><%=projetos.getString("projectanalcode")%></td>
-                    <td><%=projetos.getString("projectname")%></td>
-                    <td><%=projetos.getString("mcistdcliname")%></td>
-                    <td><%=projetos.getString("projectstatus")%></td>
-                    <td><%=projetos.getString("owner")%></td>
-                    <td><%=projetos.getString("cidade")%></td>
-                    <td><%=projetos.getString("uf")%></td>
-                    <td><%=projetos.getString("propreqdate")%></td>
-                    <td><%=projetos.getString("eventstartdate")%></td>
-                    <td><%=projetos.getString("eventclosingdate")%></td>
-                    <td><%=projetos.getString("paxnumber")%></td>
-                    <td><%=projetos.getString("cancelinsurance")%></td>
-                    <td><%=projetos.getString("probability")%></td>
-                    <td><%=projetos.getString("turnoverforowner")%></td>
-                    <td><%=projetos.getString("gmforowner")%></td>
-                    <td><%=projetos.getString("gmturnoverperc")%></td>
-                    <td><%=projetos.getString("weightedprospec")%></td>
-                    <td><%=projetos.getString("datacadastro")%></td>
-                    <td><%=projetos.getString("area")%></td>
-                    <td><%=projetos.getString("folderpath")%></td>
-                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
-
-                    <%
-
-                    } else {
-
-                    %>                    
-                    <td><%=linha%></td>
-                    <td><%=projetos.getString("projectanalcode")%></td>
-                    <td><%=projetos.getString("projectname")%></td>
-                    <td><%=projetos.getString("mcistdcliname")%></td>
-                    <td><%=projetos.getString("projectstatus")%></td>
-                    <td><%=projetos.getString("owner")%></td>
-                    <td><%=projetos.getString("cidade")%></td>
-                    <td><%=projetos.getString("uf")%></td>
-                    <td><%=projetos.getString("propreqdate")%></td>
-                    <td><%=projetos.getString("eventstartdate")%></td>
-                    <td><%=projetos.getString("eventclosingdate")%></td>
-                    <td><%=projetos.getString("paxnumber")%></td>
-                    <td><%=projetos.getString("cancelinsurance")%></td>
-                    <td><%=projetos.getString("probability")%></td>
-                    <td><%=projetos.getString("turnoverforowner")%></td>
-                    <td><%=projetos.getString("gmforowner")%></td>
-                    <td><%=projetos.getString("gmturnoverperc")%></td>
-                    <td><%=projetos.getString("weightedprospec")%></td>
-                    <td><%=projetos.getString("datacadastro")%></td>
-                    <td><%=projetos.getString("area")%></td>
-                    <td><%=projetos.getString("folderpath")%></td>
-                    <td><button type="submit" class="button" formaction="ConsultasProjetos?valorbusca=<%=projetos.getString("projectname")%>">Alterar</button></td>
-
-                    <%}
 
                             linha++;
 

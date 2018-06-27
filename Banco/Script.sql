@@ -176,8 +176,8 @@ CREATE TABLE prospects(
 prospectid INT NOT NULL AUTO_INCREMENT, 
 empresa VARCHAR(60) NOT NULL,
 nomecontato VARCHAR(60),
-telefone1 VARCHAR(30),
-telefone2 VARCHAR(30),
+telefone1 VARCHAR(40),
+telefone2 VARCHAR(40),
 email VARCHAR(60),
 cargo VARCHAR(80),
 origem VARCHAR(50), -- nacional / internacional

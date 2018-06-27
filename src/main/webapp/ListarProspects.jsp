@@ -102,8 +102,6 @@
 
                         long diferenca = date1.getTime() - date2.getTime();
                         
-                        System.out.println(diferenca+" diferenca");
-
                         //SE A DIFERENCA ENTRE O CADASTRO E DATA ATUAL FOR MAIOR QUE 15 DIAS MARCA COMO VERMELHO
                         if (diferenca > 15) {
                             color = "ff0000";

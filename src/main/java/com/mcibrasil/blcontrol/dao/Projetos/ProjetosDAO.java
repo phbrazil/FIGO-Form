@@ -54,7 +54,6 @@ public class ProjetosDAO {
 
         Conexao bancoconexao = new Conexao();
         
-        System.out.println(valorbusca+" aqui nos projetos");
 
         try {
 

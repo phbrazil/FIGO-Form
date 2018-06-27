@@ -85,53 +85,6 @@ folderpath varchar(100),
 FOREIGN KEY (userid) REFERENCES usuarios (userid),	
 PRIMARY KEY (projectid, projectname));
 
-
-CREATE TABLE prospects(
-prospectid INT NOT NULL AUTO_INCREMENT, 
-empresa VARCHAR(60) NOT NULL,
-nomecontato VARCHAR(60),
-telefone1 VARCHAR(30),
-telefone2 VARCHAR(30),
-email VARCHAR(60),
-cargo VARCHAR(80),
-origem VARCHAR(50), -- nacional / internacional
-hub VARCHAR(3), -- sim ou nao 
-travel VARCHAR(3), -- sim ou nao
-contatomci VARCHAR(60),
-datacadastro VARCHAR(20) NOT NULL,
-user VARCHAR(60) NOT NULL,
-PRIMARY KEY (prospectid));
-
-CREATE TABLE suspects(
-suspectid INT NOT NULL AUTO_INCREMENT, 
-empresa VARCHAR(60) NOT NULL,
-nomecontato VARCHAR(60),
-telefone1 VARCHAR(30),
-telefone2 VARCHAR(30),
-email VARCHAR(60),
-cargo VARCHAR(80),
-origem VARCHAR(50), -- nacional / internacional
-eventos VARCHAR(3), -- ??? 
-incentivos VARCHAR(3), -- ???
-contatomci VARCHAR(60),
-datacadastro VARCHAR(20) NOT NULL,
-user VARCHAR(60) NOT NULL,
-PRIMARY KEY (suspectid));
-
-create view dashboardjaneiro2018 as select count(*) as janeiro from projetos where extract(month from datacadastro)='01' and extract(year from datacadastro)='2018';
-create view dashboardfevereiro2018 as select count(*) as fevereiro from projetos where extract(month from datacadastro)='02' and extract(year from datacadastro)='2018';
-create view dashboardmarco2018 as select count(*) as marco from projetos where extract(month from datacadastro)='03' and extract(year from datacadastro)='2018';
-create view dashboardabril2018 as select count(*) as abril from projetos where extract(month from datacadastro)='04' and extract(year from datacadastro)='2018';
-create view dashboardmaio2018 as select count(*) as maio from projetos where extract(month from datacadastro)='05' and extract(year from datacadastro)='2018';
-create view dashboardjunho2018 as select count(*) as junho from projetos where extract(month from datacadastro)='06' and extract(year from datacadastro)='2018';
-create view dashboardjulho2018 as select count(*) as julho from projetos where extract(month from datacadastro)='07' and extract(year from datacadastro)='2018';
-create view dashboardagosto2018 as select count(*) as agosto from projetos where extract(month from datacadastro)='08' and extract(year from datacadastro)='2018';
-create view dashboardsetembro2018 as select count(*) as setembro from projetos where extract(month from datacadastro)='09' and extract(year from datacadastro)='2018';
-create view dashboardoutubro2018 as select count(*) as outubro from projetos where extract(month from datacadastro)='10' and extract(year from datacadastro)='2018';
-create view dashboardnovembro2018 as select count(*) as novembro from projetos where extract(month from datacadastro)='11' and extract(year from datacadastro)='2018';
-create view dashboarddezembro2018 as select count(*) as dezembro from projetos where extract(month from datacadastro)='12' and extract(year from datacadastro)='2018';
-
-
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2018/08/01','TNT','TNT CAMPUS PARTY',1860,'2018/01/29','Past','2018-01-02',0,'vazio',1,'Confirmed','AUDITADO',110940.81,33139,30,33139,1,now(),'10.18.1.10');
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2017/12/31','NATULAB','CAMPANHA DE INCENTIVO 2017',1470,'2017/01/31','Past','2018-04-30',80,'vazio',1,'Confirmed','AUDITADO',0,80704,0,80704,1,now(),'10.18.1.10');
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2017/11/16','SYNGENTA','CONVENÇÃO L&G LATAM 2018',0,'2018/03/14','Past','2018-03-17',60,'vazio',0,'Lost','0',300000,38365,13,0,1,now(),'10.18.1.10');
@@ -217,6 +170,55 @@ INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdclin
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2018/05/22','TITAN PNEUS','CONVENÇÃO',0,'2018/07/11','Future','2018-10-11',94,'vazio',0.25,'Open','0',350000,70000,20,17500,1,now(),'10.18.1.10');
 
 
+
+
+CREATE TABLE prospects(
+prospectid INT NOT NULL AUTO_INCREMENT, 
+empresa VARCHAR(60) NOT NULL,
+nomecontato VARCHAR(60),
+telefone1 VARCHAR(30),
+telefone2 VARCHAR(30),
+email VARCHAR(60),
+cargo VARCHAR(80),
+origem VARCHAR(50), -- nacional / internacional
+hub VARCHAR(3), -- sim ou nao 
+travel VARCHAR(3), -- sim ou nao
+contatomci VARCHAR(60),
+datacadastro VARCHAR(20) NOT NULL,
+user VARCHAR(60) NOT NULL,
+PRIMARY KEY (prospectid));
+
+
+CREATE TABLE suspects(
+suspectid INT NOT NULL AUTO_INCREMENT, 
+empresa VARCHAR(60) NOT NULL,
+nomecontato VARCHAR(60),
+telefone1 VARCHAR(30),
+telefone2 VARCHAR(30),
+email VARCHAR(60),
+cargo VARCHAR(80),
+origem VARCHAR(50), -- nacional / internacional
+eventos VARCHAR(3), -- ??? 
+incentivos VARCHAR(3), -- ???
+contatomci VARCHAR(60),
+datacadastro VARCHAR(20) NOT NULL,
+user VARCHAR(60) NOT NULL,
+PRIMARY KEY (suspectid));
+
+create view dashboardjaneiro2018 as select count(*) as janeiro from projetos where extract(month from datacadastro)='01' and extract(year from datacadastro)='2018';
+create view dashboardfevereiro2018 as select count(*) as fevereiro from projetos where extract(month from datacadastro)='02' and extract(year from datacadastro)='2018';
+create view dashboardmarco2018 as select count(*) as marco from projetos where extract(month from datacadastro)='03' and extract(year from datacadastro)='2018';
+create view dashboardabril2018 as select count(*) as abril from projetos where extract(month from datacadastro)='04' and extract(year from datacadastro)='2018';
+create view dashboardmaio2018 as select count(*) as maio from projetos where extract(month from datacadastro)='05' and extract(year from datacadastro)='2018';
+create view dashboardjunho2018 as select count(*) as junho from projetos where extract(month from datacadastro)='06' and extract(year from datacadastro)='2018';
+create view dashboardjulho2018 as select count(*) as julho from projetos where extract(month from datacadastro)='07' and extract(year from datacadastro)='2018';
+create view dashboardagosto2018 as select count(*) as agosto from projetos where extract(month from datacadastro)='08' and extract(year from datacadastro)='2018';
+create view dashboardsetembro2018 as select count(*) as setembro from projetos where extract(month from datacadastro)='09' and extract(year from datacadastro)='2018';
+create view dashboardoutubro2018 as select count(*) as outubro from projetos where extract(month from datacadastro)='10' and extract(year from datacadastro)='2018';
+create view dashboardnovembro2018 as select count(*) as novembro from projetos where extract(month from datacadastro)='11' and extract(year from datacadastro)='2018';
+create view dashboarddezembro2018 as select count(*) as dezembro from projetos where extract(month from datacadastro)='12' and extract(year from datacadastro)='2018';
+
+create view prospectMaiores as select count(*) as quantidade, empresa from prospects group by empresa;
 
 
 
@@ -2666,7 +2668,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OFICINA DE PRODUCAO DE ILUMINACAO LTDA - EPP','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OHRLINGS PWC AB','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OI','LUCIANO SABOIA','(11) 3131-5316','','lsaboia@oi.net.br','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OI','GABRIELLA HARUMI KIKUCHI D'EMILIO','(11) 3139-2459','','gabriella.demilio@oi.net.br','','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OI','GABRIELLA HARUMI KIKUCHI DEMILIO','(11) 3139-2459','','gabriella.demilio@oi.net.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OI','MARCELA AVILA','(21) 3131-1142','','marcela.dantas@oi.net.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OI TELECOM','Livia Bittencourt Camelo','(21) 3131-2350','(21) 98853-3052','livia.camelo@oi.net.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('OKI','NAINA DE ABREU AMORIM TICIANELLI','(11) 2609-6625','','naina.ticianelli@okidata.com','','','','','', now(),'Paulo Bezerra');
@@ -2860,7 +2862,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('REPORT COMUNICAÇÃO LTDA','','(11) 3643-5600','','JURIDICO@CLMCONTROLLER.COM.BR','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('REPRESENTACAO DA UNESCO NO BRASIL','','61321-3525','','uhbrz@unesco.org.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('REPRESENTACAO DA UNESCO NO BRASIL','','61321-3525','','uhbrz@unesco.org.br','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('RESOURCE IT SOLUTIONS','Vanessa D'angelo','(11) 3290-4000','','vanessa.dangelo@resourceit.com','','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('RESOURCE IT SOLUTIONS','Vanessa Dangelo','(11) 3290-4000','','vanessa.dangelo@resourceit.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('RESTAURANTE LORITA','','(51) 3286-0325','','robahorngomes@yahoo.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('RF TURISMO E EVENTOS ME','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('RHODIA SOLVAY','Ana Gabriela Santos','11 3741-6592','','anagabriela.santos-external@solvay.com','Comunicação','','','','', now(),'Paulo Bezerra');
@@ -2981,8 +2983,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SCHNEIDER ELECTRIC ITB','','(11) 2165-5270','','lilian.silva@schneider-electric.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SEAL TELECOM','Aline','(11) 3877-4000','','aline@sealtelecom.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SEAL TELECOM','Maria Eduarda','(11) 3877-4000','','meduarda@sealtelecom.com.br','','','','','', now(),'Paulo Bezerra');
-"INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SEBRAE','Carolina Penteado Melles','(61) 3348-7398 ','(61) 3348 7253 ','carolina.melles@sebrae.com.br
-','','','','','', now(),'Paulo Bezerra');"
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SEBRAE','Carolina Penteado Melles','(61) 3348-7398 ','(61) 3348 7253 ','carolina.melles@sebrae.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SEBRAE-PR','','(41) 330575','','rskruch@sebrae.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SEBRAE-PR','','(41) 330575','','rskruch@sebrae.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SECRETARIA DE SANEAMENTO E RECURSOS HIDRICOS','Flavia Braga Rodrigues','11999994591','','flabragarodrigues@gmail.com','Diretora depto','','','','', now(),'Paulo Bezerra');
@@ -3049,8 +3050,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIAMIG','','(31) 3284-5544','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIAMIG','','(31) 3284-5544','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIEMENS/SP','JOSE FURST','(11) 3817-2444','','jose.furst@siemens-enterprise.com','','','','','', now(),'Paulo Bezerra');
-"INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIEMENS/SP','Silvio Vidoto','(11) 3817-2447
-11 981211505','','silvio.vidoto@siemens-enterprise.com','','','','','', now(),'Paulo Bezerra');"
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIEMENS/SP','Silvio Vidoto','(11) 3817-244711 981211505','','silvio.vidoto@siemens-enterprise.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIEMENS/SP','Alecsandra Ribeiro C Penteado','(11) 3817-2559','','alecsandra@siemens-enterprise.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIG STORY WHATEVER','Marcela Oliva','11943983435','11943983435','marcela.oliva@gmail.com','Direcao','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('SIG STORY WHATEVER','Vico Almeida Barbosa','11997203435','11997203435','vicobarbosa@gmail.com','Diretor','','','','', now(),'Paulo Bezerra');

@@ -80,7 +80,7 @@
                     <td  bgcolor="#33CCCC" align = "center">Area</td>
                     <td  bgcolor="#33CCCC" align = "center">Folder Path</td>
                     <td  bgcolor="#33CCCC" align = "center">Alterar</td> 
-                    <!--td><button type="submit" class="button" name ="acaoreport" value="ExportProjetos" formaction="Exportar">Exportar</button></td-->
+                    <!--td><button type="submit" class="button" name ="acaoreport" formaction="Exportar?acaoreport=ExportProjetos">Exportar</button></td-->
                     <td><a href="Exportar?acaoreport=ExportProjetos" style="text-decoration:none;">Exportar</td>
 
                 </tr>
@@ -92,7 +92,7 @@
                     while (projetos.next()) {
 
                         if (projetos.getString("projectstatus").toUpperCase().equals("LOST")) {
-                            color = "#ff0000";
+                            color = "#FF0000";
 
                         } else if (projetos.getString("projectstatus").toUpperCase().equals("CONFIRMED")) {
                             color = "#00FF00";

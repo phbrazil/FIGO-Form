@@ -65,7 +65,7 @@
                     <div class="dropdown">
                         <a class="nav-link js-scroll-trigger">Consultas</a>
                         <div class="dropdown-content">
-                            <p><a href="Home.jsp" style="text-decoration:none;">FIGO Company Information</a></p>
+                            <p><a href="ConsultaCompanyInformation.jsp" style="text-decoration:none;">FIGO Company Information</a></p>
 
                         </div>
                     </div>

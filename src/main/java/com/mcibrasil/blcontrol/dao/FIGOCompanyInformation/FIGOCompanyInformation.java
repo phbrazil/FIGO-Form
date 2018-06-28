@@ -48,6 +48,36 @@ public class FIGOCompanyInformation {
         return null;
     }
 
+    public ResultSet PesquisarFigoCompanyInformation(String valorbusca) {
+
+        String selectgeral = "";
+
+        Conexao bancoconexao = new Conexao();
+
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+
+            conexao = bancoconexao.getConnection();
+
+            java.sql.Statement st = conexao.createStatement();
+            selectgeral = "select * from companyinformation where nomefantasia like '%"+valorbusca+"%'";
+            ResultSet resultgeral = st.executeQuery(selectgeral);
+
+            if (resultgeral != null) {
+                return resultgeral;
+            }
+
+            conexao.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Error: " + e.getMessage());
+
+        }
+        return null;
+    }
+
     public boolean GravarFIGOCompanyInformation(com.mcibrasil.blcontrol.model.FIGOCompanyInformation.FIGOCompanyInformation companyinformation) {
 
         boolean success = false;

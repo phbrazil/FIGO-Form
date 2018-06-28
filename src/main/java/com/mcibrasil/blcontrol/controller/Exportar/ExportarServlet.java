@@ -29,8 +29,6 @@ public class ExportarServlet extends HttpServlet {
 
         if (acaoreport.equals("ListarCompanyInformation")) {
             
-            System.out.println("entrei aqui ");
-
             FIGOCompanyInformation companyinformation = new FIGOCompanyInformation();
 
             ResultSet exportcompanyinformation = companyinformation.PesquisarFigoCompanyInformationGeral();
@@ -40,7 +38,18 @@ public class ExportarServlet extends HttpServlet {
             request.setAttribute("companyinformation", exportcompanyinformation);
             request.getRequestDispatcher("ListarCompanyInformation.jsp").forward(request, response);
 
-        } 
+        } else if(acaoreport.equals("ExportCompanyInformation")){
+            
+            FIGOCompanyInformation companyinformation = new FIGOCompanyInformation();
+
+            ResultSet exportcompanyinformation = companyinformation.PesquisarFigoCompanyInformationGeral();
+
+            acaoreport = null;
+
+            request.setAttribute("companyinformation", exportcompanyinformation);
+            request.getRequestDispatcher("Exportar/ExportCompanyInformation.jsp").forward(request, response);
+            
+        }
 
     }
 

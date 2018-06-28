@@ -16,7 +16,7 @@ import java.util.Properties;
  */
 public class Conexao {
 
-    private String url = "jdbc:mysql://localhost:3306/mciprojetos";
+    private String url = "jdbc:mysql://localhost:3306/figocompanyinformation";
     private String driver = "com.mysql.jdbc.Driver";
     private String userName = "mci";
     private String password = "0c24a188a9";

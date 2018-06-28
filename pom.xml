@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mcibrasil</groupId>
-    <artifactId>Opportunity</artifactId>
+    <artifactId>FIGOForm</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>Opportunity</name>
+    <name>FIGOForm</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

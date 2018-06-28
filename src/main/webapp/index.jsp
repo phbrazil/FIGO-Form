@@ -27,7 +27,7 @@
             <br>
             <br>
             <img class="mb-4" src="img/mci_logo.png" alt="logo MCI" width="200" height="200">
-            <h1 class="h3 mb-3 font-weight-normal">Efetuar Login</h1>
+            <h1 class="h5 mb-3 font-weight-normal">FIGO Form</h1>
             <label for="inputEmail" class="sr-only">Email</label>
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name = "username" required autofocus>
             <label for="inputPassword" class="sr-only">Senha</label>

@@ -25,7 +25,7 @@
 
         <%@include  file="navbar.jsp" %>
 
-        
+
         <br>
         <div align ="center">
             <img class="mb-4" src="img/mci_logo.png" alt="logo MCI" width="200" height="200">
@@ -34,12 +34,6 @@
             </h2>
 
 
-
-            <div class="container">
-                <div class="py-5 text-center">
-                    <a href ="Dashboard?type=Confirmed" style="text-decoration:none;">Access the Quick Dashboard</a>
-                </div>
-            </div>
 
         </div>
 

@@ -72,7 +72,6 @@
                     <td  bgcolor="#33CCCC" align = "center">Data Cadastro</td>
                     <td  bgcolor="#33CCCC" align = "center">User</td>
 
-                    <!--td><button type="submit" class="button" name ="acaoreport" value="ExportProjetos" formaction="Exportar">Exportar</button></td-->
                     <td><a href="Exportar?acaoreport=ExportSuspects" style="text-decoration:none;">Exportar</td>
 
                 </tr>

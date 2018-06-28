@@ -59,7 +59,7 @@
             <table border='2' cellpadding='10' width='1100'>
                 <tr>
                     <td  bgcolor="#33CCCC">Linha</td>
-                    <td  bgcolor="#33CCCC" align = "center">CPNJ</td>
+                    <td  bgcolor="#33CCCC" align = "center">CNPJ</td>
                     <td  bgcolor="#33CCCC" align = "center">Nome Fantasia</td>
                     <td  bgcolor="#33CCCC" align = "center">Razao Social</td>
                     <td  bgcolor="#33CCCC" align = "center">Area Atuação</td>

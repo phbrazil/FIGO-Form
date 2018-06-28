@@ -135,46 +135,49 @@
 
                 <div class="col-md-8 order-md-1">
 
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label>CNPJ</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"></span>
+                                </div>
 
-                    <div class="mb-3">
-                        <label>CNPJ</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"></span>
-                            </div>
+                                <input onkeydown="javascript: fMasc(this, mCNPJ());" type="text" class="form-control" id="cpf" name="cnpj" maxlength="20" placeholder="0000.000.00000">
 
-                            <input onkeydown="javascript: fMasc(this, mCNPJ());" type="text" class="form-control" id="cpf" name="cnpj" maxlength="20" placeholder="0000.000.00000">
-
-                            <div class="invalid-feedback" style="width: 100%;">
-                                CNPJ obrigatório.
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    CNPJ obrigatório.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label>Nome Fantasia</label>
-                        <div class="input-group">
-                            <input name="nomefantasia" type="text" class="form-control" id="nomefantasia" placeholder="" value="" maxlength ="50" required>
-                            <div class="invalid-feedback">
-                                Resposta necessária
+                        <div class="col-md-7 mb-3">
+                            <label>Nome Fantasia</label>
+                            <div class="input-group">
+                                <input name="nomefantasia" type="text" class="form-control" id="nomefantasia" placeholder="" value="" maxlength ="50" required>
+                                <div class="invalid-feedback">
+                                    Resposta necessária
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label>Razão Social</label>
-                        <div class="input-group">
-                            <input name="razaosocial" type="text" class="form-control" id="razaosocial" placeholder="" value="" maxlength ="50" required>
-                            <div class="invalid-feedback">
-                                Resposta necessária
+                        <div class="col-md-7 mb-3">
+                            <label>Razão Social</label>
+                            <div class="input-group">
+                                <input name="razaosocial" type="text" class="form-control" id="razaosocial" placeholder="" value="" maxlength ="50" required>
+                                <div class="invalid-feedback">
+                                    Resposta necessária
+                                </div>
                             </div>
-                        </div>
-                        <label>Area de atuação</label>
-                        <div class="input-group">
-                            <input name="areaatuacao" type="text" class="form-control" id="razaosocial" placeholder="" value="" maxlength ="50" required>
-                            <div class="invalid-feedback">
-                                Resposta necessária
+                        </div>  
+                        <div class="col-md-5 mb-3">
+                            <label>Area de atuação</label>
+                            <div class="input-group">
+                                <input name="areaatuacao" type="text" class="form-control" id="razaosocial" placeholder="" value="" maxlength ="50" required>
+                                <div class="invalid-feedback">
+                                    Resposta necessária
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 mb-3">

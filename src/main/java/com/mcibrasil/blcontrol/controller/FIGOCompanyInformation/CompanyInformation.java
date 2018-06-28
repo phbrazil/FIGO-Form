@@ -63,6 +63,7 @@ public class CompanyInformation extends HttpServlet {
         String contato = request.getParameter("cnpj");
         String user = (String) sessao.getAttribute("username");
         String cargo = request.getParameter("cargo");
+        boolean success = false;
 
         FIGOCompanyInformation companyinformation = new FIGOCompanyInformation(cnpj, nomefantasia, razaosocial, areaatuacao,
                 cep, rua, numero, complemento, bairro, cidade, estado, pais, ddi1, ddd1, telefone1, ddi2, ddd2, telefone2,
@@ -70,13 +71,22 @@ public class CompanyInformation extends HttpServlet {
 
         com.mcibrasil.blcontrol.dao.FIGOCompanyInformation.FIGOCompanyInformation gravarproposta = new com.mcibrasil.blcontrol.dao.FIGOCompanyInformation.FIGOCompanyInformation();
 
-        gravarproposta.GravarFIGOCompanyInformation(companyinformation);
+        success = gravarproposta.GravarFIGOCompanyInformation(companyinformation);
 
-        companyinformation = null;
+        if (success == true) {
+            companyinformation = null;
 
-        request.setAttribute("mensagem", "Company Information Cadastrado");
+            request.setAttribute("mensagem", "Company Information Cadastrado");
 
-        request.getRequestDispatcher("CadastrarCompanyInformation.jsp").forward(request, response);
+            request.getRequestDispatcher("CadastrarCompanyInformation.jsp").forward(request, response);
+
+        } else {
+
+            request.setAttribute("mensagem", "Falha no Cadastrado, tente novamente");
+
+            request.getRequestDispatcher("CadastrarCompanyInformation.jsp").forward(request, response);
+
+        }
 
     }
 

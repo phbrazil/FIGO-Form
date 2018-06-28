@@ -535,6 +535,9 @@
         if (mensagem == "Company Information Cadastrado") {
             alert(mensagem)
 
+        }else if(mensagem == "Falha no Cadastrado, tente novamente"){
+            alert(mensagem)
+            
         }
     </script>
 

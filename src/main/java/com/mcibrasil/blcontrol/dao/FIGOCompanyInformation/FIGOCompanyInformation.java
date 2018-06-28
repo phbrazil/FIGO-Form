@@ -48,7 +48,9 @@ public class FIGOCompanyInformation {
         return null;
     }
 
-    public void GravarFIGOCompanyInformation(com.mcibrasil.blcontrol.model.FIGOCompanyInformation.FIGOCompanyInformation companyinformation) {
+    public boolean GravarFIGOCompanyInformation(com.mcibrasil.blcontrol.model.FIGOCompanyInformation.FIGOCompanyInformation companyinformation) {
+
+        boolean success = false;
 
         Conexao bancoconexao = new Conexao();
 
@@ -60,7 +62,7 @@ public class FIGOCompanyInformation {
                     + "cep, rua,numero, complemento, bairro, cidade, estado, pais,ddi1,ddd1,telefone1,"
                     + "ddi2,ddd2, telefone2, ddicelular, dddcelular, celular, ddifax, dddfax, fax, site,email,"
                     + "emailcontato,obs, contato,user, cargo, cnpj) VALUES "
-                    + "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
+                    + "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
             PreparedStatement preparedStmt = conexao.prepareStatement(query);
             preparedStmt.setString(1, companyinformation.getNomefantasia());
@@ -92,18 +94,20 @@ public class FIGOCompanyInformation {
             preparedStmt.setString(27, companyinformation.getObs());
             preparedStmt.setString(28, companyinformation.getContato());
             preparedStmt.setString(29, companyinformation.getUser());
-            preparedStmt.setString(30, companyinformation.getCargo());            
+            preparedStmt.setString(30, companyinformation.getCargo());
             preparedStmt.setString(31, companyinformation.getCnpj());
 
             preparedStmt.execute();
 
             conexao.close();
+            success = true;
 
         } catch (Exception e) {
 
             System.out.println("erro" + e.getMessage());
 
         }
+        return success;
 
     }
 

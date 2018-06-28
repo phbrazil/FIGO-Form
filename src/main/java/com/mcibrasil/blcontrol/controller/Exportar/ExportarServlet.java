@@ -28,10 +28,12 @@ public class ExportarServlet extends HttpServlet {
         String acaoreport = request.getParameter("acaoreport");
 
         if (acaoreport.equals("ListarCompanyInformation")) {
+            
+            System.out.println("entrei aqui ");
 
-            FIGOCompanyInformation clientmapping = new FIGOCompanyInformation();
+            FIGOCompanyInformation companyinformation = new FIGOCompanyInformation();
 
-            ResultSet exportcompanyinformation = clientmapping.PesquisarFigoCompanyInformationGeral();
+            ResultSet exportcompanyinformation = companyinformation.PesquisarFigoCompanyInformationGeral();
 
             acaoreport = null;
 

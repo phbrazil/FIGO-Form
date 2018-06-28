@@ -33,29 +33,44 @@ public class CompanyInformation extends HttpServlet {
 
         HttpSession sessao = request.getSession(true);
 
-        String nomecliente = request.getParameter("nomecliente");
-        String businessmanager = request.getParameter("businessmanager");
-        String accountmanager = request.getParameter("accountmanager");
-        String creator = (String) sessao.getAttribute("username");
-        float questao1 = Float.valueOf(request.getParameter("questao1"));
-        int questao2 = Integer.valueOf(request.getParameter("questao2"));
-        String questao3 = request.getParameter("questao3");
-        String questao4 = request.getParameter("questao4");
-        String questao5 = request.getParameter("questao5");
-        String questao6 = request.getParameter("questao6");
-        String questao7 = request.getParameter("questao7");
-        String questao8 = request.getParameter("questao8");
-        float questao9 = Float.valueOf(request.getParameter("questao9"));
-        String questao10 = request.getParameter("questao10");
-        String questao11 = request.getParameter("questao11");
+        String cnpj = request.getParameter("cnpj");
+        String nomefantasia= request.getParameter("nomefantasia");
+        String razaosocial= request.getParameter("razaosocial");
+        String areaatuacao= request.getParameter("areaatuacao");
+        String cep= request.getParameter("cep");
+        String rua= request.getParameter("rua");
+        String numero= request.getParameter("numero");
+        String complemento= request.getParameter("complemento");
+        String bairro= request.getParameter("bairro");
+        String cidade= request.getParameter("cidade");
+        String estado= request.getParameter("uf"); // GAMBIS UF
+        String pais= request.getParameter("pais");
+        String ddi1= request.getParameter("ddi1");
+        String ddd1= request.getParameter("ddd1");
+        String telefone1= request.getParameter("telefone1");
+        String ddi2= request.getParameter("ddi2");
+        String ddd2= request.getParameter("ddd2");
+        String telefone2= request.getParameter("telefone2");
+        String ddifax= request.getParameter("ddifax");
+        String dddfax= request.getParameter("dddfax");
+        String fax= request.getParameter("fax");
+        String site= request.getParameter("site");
+        String email= request.getParameter("email");
+        String emailcontato= request.getParameter("emailcontato");        
+        String obs= request.getParameter("obs");
+        String contato= request.getParameter("cnpj");
+        String user = (String) sessao.getAttribute("username");
+        String cargo =  request.getParameter("cargo");
 
-        FIGOCompanyInformation figocompanyinformation = new FIGOCompanyInformation(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
+        FIGOCompanyInformation companyinformation = new FIGOCompanyInformation(cnpj, nomefantasia, razaosocial, areaatuacao,
+                cep, rua, numero, complemento, bairro, cidade, estado, pais, ddi1, ddd1, telefone1, ddi2, ddd2, telefone2, 
+                ddifax, dddfax, fax, site, email, obs, contato, cargo, ddifax, dddfax, user, emailcontato, user);
 
         com.mcibrasil.blcontrol.dao.FIGOCompanyInformation.FIGOCompanyInformation gravarproposta = new com.mcibrasil.blcontrol.dao.FIGOCompanyInformation.FIGOCompanyInformation();
 
-        gravarproposta.GravarFIGOCompanyInformation(figocompanyinformation);
+        gravarproposta.GravarFIGOCompanyInformation(companyinformation);
 
-        figocompanyinformation = null;
+        companyinformation = null;
 
         request.setAttribute("mensagem", "Company Information Cadastrado");
 

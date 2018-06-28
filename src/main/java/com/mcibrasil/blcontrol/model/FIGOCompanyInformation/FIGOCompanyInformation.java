@@ -23,7 +23,7 @@ public class FIGOCompanyInformation {
     private String cidade;
     private String estado;
     private String pais;
-    private String dddi1;
+    private String ddi1;
     private String ddd1;
     private String telefone1;
     private String ddi2;
@@ -36,8 +36,27 @@ public class FIGOCompanyInformation {
     private String email;
     private String obs;
     private String contato;
+    private String cargo;
+    private String ddicelular;
+    private String dddcelular;
+    private String celular;
+    private String emailcontato;
+    private String user;
 
-    public FIGOCompanyInformation(String cnpj, String nomefantasia, String razaosocial, String areaatuacao, String cep, String rua, String numero, String complemento, String bairro, String cidade, String estado, String pais, String dddi1, String ddd1, String telefone1, String ddi2, String ddd2, String telefone2, String ddifax, String dddfax, String fax, String site, String email, String obs, String contato, String cargo, String ddicelular, String dddcelular, String celular, String emailcontato) {
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public FIGOCompanyInformation(String cnpj, String nomefantasia, String razaosocial, String areaatuacao, 
+            String cep, String rua, String numero, String complemento, String bairro, String cidade, String 
+                    estado, String pais, String ddi1, String ddd1, String telefone1, String ddi2, String 
+                            ddd2, String telefone2, String ddifax, String dddfax, String fax, String site,
+                            String email, String obs, String contato, String cargo, String ddicelular, 
+                            String dddcelular, String celular, String emailcontato, String user) {
         this.cnpj = cnpj;
         this.nomefantasia = nomefantasia;
         this.razaosocial = razaosocial;
@@ -50,7 +69,7 @@ public class FIGOCompanyInformation {
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
-        this.dddi1 = dddi1;
+        this.ddi1 = ddi1;
         this.ddd1 = ddd1;
         this.telefone1 = telefone1;
         this.ddi2 = ddi2;
@@ -68,6 +87,7 @@ public class FIGOCompanyInformation {
         this.dddcelular = dddcelular;
         this.celular = celular;
         this.emailcontato = emailcontato;
+        this.user = user;
     }
     
     
@@ -168,12 +188,12 @@ public class FIGOCompanyInformation {
         this.pais = pais;
     }
 
-    public String getDddi1() {
-        return dddi1;
+    public String getDdi1() {
+        return ddi1;
     }
 
-    public void setDddi1(String dddi1) {
-        this.dddi1 = dddi1;
+    public void setDdi1(String dddi1) {
+        this.ddi1 = dddi1;
     }
 
     public String getDdd1() {
@@ -311,10 +331,6 @@ public class FIGOCompanyInformation {
     public void setEmailcontato(String emailcontato) {
         this.emailcontato = emailcontato;
     }
-    private String cargo;
-    private String ddicelular;
-    private String dddcelular;
-    private String celular;
-    private String emailcontato;
+    
 
 }

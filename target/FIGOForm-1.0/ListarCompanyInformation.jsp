@@ -46,7 +46,7 @@
     <form name = "ConsultaCli" method="POST" >
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listar Propostas</title>
+        <title>Listar Company Information</title>
     </head>
     <body id="page-top">
 
@@ -54,29 +54,43 @@
 
         <div align ="center">
             <br>
-            <h2>Listagem de Clients Mapping</h2>
+            <h2>Listagem de Company Information</h2>
             <font size="1" face="Arial" >
             <table border='2' cellpadding='10' width='1100'>
                 <tr>
                     <td  bgcolor="#33CCCC">Linha</td>
-                    <td  bgcolor="#33CCCC" align = "center">Código do Mapeamento</td>
-                    <td  bgcolor="#33CCCC" align = "center">Nome do Cliente</td>
-                    <td  bgcolor="#33CCCC" align = "center">Business Manager</td>
-                    <td  bgcolor="#33CCCC" align = "center">Account Manager</td>
-                    <td  bgcolor="#33CCCC" align = "center">Creator</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 1</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 2</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 3</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 4</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 5</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 6</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 7</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 8</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 9</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 10</td>
-                    <td  bgcolor="#33CCCC" align = "center">Questao 11</td>
+                    <td  bgcolor="#33CCCC" align = "center">CPNJ</td>
+                    <td  bgcolor="#33CCCC" align = "center">Nome Fantasia</td>
+                    <td  bgcolor="#33CCCC" align = "center">Razao Social</td>
+                    <td  bgcolor="#33CCCC" align = "center">Area Atuação</td>
+                    <td  bgcolor="#33CCCC" align = "center">CEP</td>
+                    <td  bgcolor="#33CCCC" align = "center">Rua</td>
+                    <td  bgcolor="#33CCCC" align = "center">Numero</td>
+                    <td  bgcolor="#33CCCC" align = "center">Complemento</td>
+                    <td  bgcolor="#33CCCC" align = "center">Bairro</td>
+                    <td  bgcolor="#33CCCC" align = "center">Cidade</td>
+                    <td  bgcolor="#33CCCC" align = "center">Estado</td>
+                    <td  bgcolor="#33CCCC" align = "center">Pais</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDI 1</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDD 1</td>
+                    <td  bgcolor="#33CCCC" align = "center">Telefone 1</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDI 2</td>
+                    <td  bgcolor="#33CCCC" align = "center">Telefone 2</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDI Celular</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDD Celular</td>
+                    <td  bgcolor="#33CCCC" align = "center">Celular</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDI FAX</td>
+                    <td  bgcolor="#33CCCC" align = "center">DDD FAX</td>
+                    <td  bgcolor="#33CCCC" align = "center">FAX</td>
+                    <td  bgcolor="#33CCCC" align = "center">Site</td>
+                    <td  bgcolor="#33CCCC" align = "center">Email</td>
+                    <td  bgcolor="#33CCCC" align = "center">Email Contato</td>
+                    <td  bgcolor="#33CCCC" align = "center">OBS</td>
+                    <td  bgcolor="#33CCCC" align = "center">Contato</td>
+                    <td  bgcolor="#33CCCC" align = "center">User</td>
+                    <td  bgcolor="#33CCCC" align = "center">Cargo</td>
 
-                    <td><a href="Exportar?acaoreport=ExportClientMapping" style="text-decoration:none;">Exportar</td>
+                    <td><a href="Exportar?acaoreport=ExportCompanyInformation" style="text-decoration:none;">Exportar</td>
 
                 </tr>
                 <%
@@ -89,24 +103,39 @@
                 <tr>
 
                     <td><%=linha%></td>
-                    <td><%=companyinformation.getString("mappingid")%></td>
-                    <td><%=companyinformation.getString("nomecliente")%></td>
-                    <td><%=companyinformation.getString("businessmanager")%></td>
-                    <td><%=companyinformation.getString("accountmanager")%></td>
-                    <td><%=companyinformation.getString("creator")%></td>
-                    <td><%=companyinformation.getString("questao1")%></td>
-                    <td><%=companyinformation.getString("questao2")%></td>
-                    <td><%=companyinformation.getString("questao3")%></td>
-                    <td><%=companyinformation.getString("questao4")%></td>
-                    <td><%=companyinformation.getString("questao5")%></td>
-                    <td><%=companyinformation.getString("questao6")%></td>
-                    <td><%=companyinformation.getString("questao7")%></td>
-                    <td><%=companyinformation.getString("questao8")%></td>
-                    <td><%=companyinformation.getString("questao9")%></td>
-                    <td><%=companyinformation.getString("questao10")%></td>
-                    <td><%=companyinformation.getString("questao11")%></td>
+                    <td><%=companyinformation.getString("cnpj")%></td>
+                    <td><%=companyinformation.getString("nomefantasia")%></td>
+                    <td><%=companyinformation.getString("razaosocial")%></td>
+                    <td><%=companyinformation.getString("areaatuacao")%></td>
+                    <td><%=companyinformation.getString("cep")%></td>
+                    <td><%=companyinformation.getString("rua")%></td>
+                    <td><%=companyinformation.getString("numero")%></td>
+                    <td><%=companyinformation.getString("complemento")%></td>
+                    <td><%=companyinformation.getString("bairro")%></td>
+                    <td><%=companyinformation.getString("cidade")%></td>
+                    <td><%=companyinformation.getString("estado")%></td>
+                    <td><%=companyinformation.getString("pais")%></td>
+                    <td><%=companyinformation.getString("ddi1")%></td>
+                    <td><%=companyinformation.getString("ddd1")%></td>
+                    <td><%=companyinformation.getString("telefone1")%></td>
+                    <td><%=companyinformation.getString("ddi2")%></td>
+                    <td><%=companyinformation.getString("ddd2")%></td>
+                    <td><%=companyinformation.getString("telefone2")%></td>
+                    <td><%=companyinformation.getString("ddicelular")%></td>
+                    <td><%=companyinformation.getString("dddcelular")%></td>
+                    <td><%=companyinformation.getString("celular")%></td>
+                    <td><%=companyinformation.getString("ddifax")%></td>
+                    <td><%=companyinformation.getString("dddfax")%></td>
+                    <td><%=companyinformation.getString("fax")%></td>
+                    <td><%=companyinformation.getString("site")%></td>
+                    <td><%=companyinformation.getString("email")%></td>
+                    <td><%=companyinformation.getString("emailcontato")%></td>
+                    <td><%=companyinformation.getString("obs")%></td>
+                    <td><%=companyinformation.getString("contato")%></td>
+                    <td><%=companyinformation.getString("user")%></td>
+                    <td><%=companyinformation.getString("cargo")%></td>
 
-                    <td><button type="submit" class="button" formaction="ConsultaClientMapping?mappingid=<%=companyinformation.getString("mappingid")%>">Alterar</button></td>
+                    <td><button type="submit" class="button" formaction="ConsultaClientMapping?companyid=<%=companyinformation.getString("companyid")%>">Alterar</button></td>
 
                     <%
 

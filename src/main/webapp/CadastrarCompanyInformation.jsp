@@ -143,7 +143,7 @@
                                 <span class="input-group-text"></span>
                             </div>
 
-                            <input onkeydown="javascript: fMasc(this, mCNPJ());" type="text" class="form-control" id="cpf" name="cnpjcliente" maxlength="20" placeholder="0000.000.00000" required>
+                            <input onkeydown="javascript: fMasc(this, mCNPJ());" type="text" class="form-control" id="cpf" name="cnpj" maxlength="20" placeholder="0000.000.00000">
 
                             <div class="invalid-feedback" style="width: 100%;">
                                 CNPJ obrigatório.
@@ -153,7 +153,7 @@
                     <div class="mb-3">
                         <label>Nome Fantasia</label>
                         <div class="input-group">
-                            <input name="nomefantasia" type="text" class="form-control" id="nomefantasia" placeholder="" value="" name="nomecliente" maxlength ="50" required>
+                            <input name="nomefantasia" type="text" class="form-control" id="nomefantasia" placeholder="" value="" maxlength ="50" required>
                             <div class="invalid-feedback">
                                 Resposta necessária
                             </div>
@@ -162,14 +162,14 @@
                     <div class="mb-3">
                         <label>Razão Social</label>
                         <div class="input-group">
-                            <input name="razaosocial" type="text" class="form-control" id="razaosocial" placeholder="" value="" name="nomecliente" maxlength ="50" required>
+                            <input name="razaosocial" type="text" class="form-control" id="razaosocial" placeholder="" value="" maxlength ="50" required>
                             <div class="invalid-feedback">
                                 Resposta necessária
                             </div>
                         </div>
                         <label>Area de atuação</label>
                         <div class="input-group">
-                            <input name="areaatuacao" type="text" class="form-control" id="razaosocial" placeholder="" value="" name="nomecliente" maxlength ="50" required>
+                            <input name="areaatuacao" type="text" class="form-control" id="razaosocial" placeholder="" value="" maxlength ="50" required>
                             <div class="invalid-feedback">
                                 Resposta necessária
                             </div>
@@ -279,8 +279,15 @@
 
                     <div class="row">
                         <div class="col-md-2 mb-3">
+                            <label>DDI1</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "ddi1" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                DDI1 obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
                             <label>DDD1</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "telefone1" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "ddd1" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
                             <div class="invalid-feedback">
                                 DDD1 obrigatório
                             </div>
@@ -294,8 +301,15 @@
                             </div>
                         </div>
                         <div class="col-md-2 mb-3">
+                            <label>DDI2</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "ddi2" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                DDD2 obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
                             <label>DDD2</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "telefone1" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "ddd2" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
                             <div class="invalid-feedback">
                                 DDD2 obrigatório
                             </div>
@@ -309,45 +323,62 @@
                             </div>
                         </div>
                         <div class="col-md-2 mb-3">
+                            <label>DDI CEL</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "ddicelular" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                DDD CEL obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
                             <label>DDD 1</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "dddcelular1" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "dddcelular" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
                             <div class="invalid-feedback">
                                 DDD1 obrigatório
                             </div>
                         </div>
 
-                        <div class="col-md-3 mb-3">
-                            <label>Celular 1</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "celular1" type="text" class="form-control" id="tel2" placeholder="xxxxx-xxxx" maxlength="14" value = "">
+                        <div class="col-md-4 mb-3">
+                            <label>Celular</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "celular" type="text" class="form-control" id="tel2" placeholder="xxxxx-xxxx" maxlength="14" value = "">
                             <div class="invalid-feedback">
                                 Celular obrigatório
                             </div>
                         </div>
                         <div class="col-md-2 mb-3">
-                            <label>DDD 2</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "dddcelular2" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <label>DDI FAX</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "ddifax" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
                             <div class="invalid-feedback">
-                                DDD2 obrigatório
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 mb-3">
-                            <label>Celular 2</label>
-                            <input onkeydown="javascript: fMasc(this, mTel);" name = "celular2 type="text" class="form-control" id="tel2" placeholder="xxxxx-xxxx" maxlength="14" value = "">
-                                   <div class="invalid-feedback">
-                                Celular obrigatório
+                                DDI FAX obrigatório
                             </div>
                         </div>
                         <div class="col-md-2 mb-3">
+                            <label>DDD FAX</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "dddfax" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                DDD FAX obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label>FAX</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "fax" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                FAX obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Site</label>
+                            <input onkeydown="javascript: fMasc(this, mTel);" name = "site" type="text" class="form-control" id="tel1" placeholder="" maxlength="14" value = "">
+                            <div class="invalid-feedback">
+                                FAX obrigatório
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
                             <label>OBS</label>
                             <input name ="obs" type="text" class="form-control" id="obs" placeholder="" maxlength ="60" value ="">
                             <div class="invalid-feedback">
                                 OBS Necessario
                             </div>
                         </div>
-
-
-
                         <div class="col-md-4 mb-3">
                             <label for="email">Email</label>
                             <input name ="email" type="email" class="form-control" id="email" placeholder="cliente@exemplo.com" maxlength ="30" value ="">
@@ -498,7 +529,7 @@
 
 
 
-        if (mensagem == "Client Mapping Cadastrado") {
+        if (mensagem == "Company Information Cadastrado") {
             alert(mensagem)
 
         }

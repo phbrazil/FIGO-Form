@@ -4,25 +4,41 @@ CREATE DATABASE figocompanyinformation;
 USE figocompanyinformation;
 
 
--- TABLE CLIENT MAPPING
-CREATE TABLE clientmapping(
-mappingid INT NOT NULL AUTO_INCREMENT,
-nomecliente VARCHAR(60) NOT NULL,
-businessmanager VARCHAR(60) NOT NULL,
-accountmanager VARCHAR(60) NOT NULL,
-creator VARCHAR(60) NOT NULL,
-questao1 FLOAT (10,2) NOT NULL, -- 1) Qual o potencial de budget para ativações e eventos no ano?
-questao2 INT NOT NULL, -- 2) Quantos solicitantes de eventos há na empresa?
-questao3 VARCHAR(100) NOT NULL, -- 3) Quem são os maiores solicitantes (mais verba destinada à eventos)? (nome/cargo/e-mail/telefone)maiorcompr VARCHAR(50) NOT NULL,
-questao4 VARCHAR(100) NOT NULL, -- 4) Quem é o maior comprador?
-questao5 VARCHAR(100) NOT NULL, -- 5) Todos os BIDs passam por Compras? Descreva o processo de solicitações. Há uma área de Eventos na empresa? O Departamento de Compras se envolve? A solicitação vem direto do marketing/trade?
-questao6 VARCHAR(100) NOT NULL, -- 6) Quais departamentos solicitam eventos? Que tipo de eventos casa um deles realiza?
-questao7 VARCHAR(20) NOT NULL, -- 7) O processo é  job a job via homologação? (verificar contrato vigente)
-questao8 VARCHAR(40) NOT NULL, -- 8) Se homologação, há contrato? Quando será feita a próxima homologação?
-questao9 FLOAT(10,2), -- 9) Quanto comprou da MCI em 2017 / 2018?
-questao10 VARCHAR(60) NOT NULL, -- 10) Quais são as agencias que estao dentro do cliente? (quem são nossos concorrentes?)
-questao11 VARCHAR(60) NOT NULL, -- 11) Vocês homologam empresa de Cenografia e AV? Se sim, quando será feita a próxima homologação?
-PRIMARY KEY (mappingid, nomecliente));
+-- TABLE COMPANY INFORMATION
+CREATE TABLE companyinformation(
+companyid INT NOT NULL AUTO_INCREMENT,
+cnpj VARCHAR(60) NOT NULL,
+nomefantasia VARCHAR(60) NOT NULL,
+razaosocial VARCHAR(60) NOT NULL,
+areaatuacao VARCHAR(60) NOT NULL,
+cep VARCHAR(60) NOT NULL,
+rua VARCHAR(20) NOT NULL,
+numero VARCHAR(60) NOT NULL,
+complemento VARCHAR(60) NOT NULL,
+bairro VARCHAR(60) NOT NULL,
+cidade VARCHAR(60) NOT NULL,
+estado VARCHAR(60) NOT NULL,
+pais VARCHAR(60) NOT NULL,
+ddi1 VARCHAR(10),
+ddd1 VARCHAR(10),
+telefone1 VARCHAR(60),
+ddi2 VARCHAR(10),
+ddd2 VARCHAR(10),
+telefone2 VARCHAR(60),
+ddicelular VARCHAR(10),
+dddcelular VARCHAR(10),
+celular VARCHAR (30),
+ddifax VARCHAR(10),
+dddfax VARCHAR(30),
+fax VARCHAR(60),
+site VARCHAR(60),
+email VARCHAR(60),
+emailcontato VARCHAR(60),
+obs VARCHAR(60),
+contato VARCHAR(60),
+user VARCHAR(60) NOT NULL,
+cargo VARCHAR(60),
+PRIMARY KEY (companyid));
 	
 
 

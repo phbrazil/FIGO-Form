@@ -174,12 +174,12 @@ INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdclin
 
 CREATE TABLE prospects(
 prospectid INT NOT NULL AUTO_INCREMENT, 
-empresa VARCHAR(60) NOT NULL,
+empresa VARCHAR(100) NOT NULL,
 nomecontato VARCHAR(60),
-telefone1 VARCHAR(40),
-telefone2 VARCHAR(40),
+telefone1 VARCHAR(60),
+telefone2 VARCHAR(60),
 email VARCHAR(60),
-cargo VARCHAR(80),
+cargo VARCHAR(100),
 origem VARCHAR(50), -- nacional / internacional
 hub VARCHAR(3), -- sim ou nao 
 travel VARCHAR(3), -- sim ou nao
@@ -191,12 +191,12 @@ PRIMARY KEY (prospectid));
 
 CREATE TABLE suspects(
 suspectid INT NOT NULL AUTO_INCREMENT, 
-empresa VARCHAR(60) NOT NULL,
+empresa VARCHAR(100) NOT NULL,
 nomecontato VARCHAR(60),
-telefone1 VARCHAR(30),
-telefone2 VARCHAR(30),
+telefone1 VARCHAR(60),
+telefone2 VARCHAR(60),
 email VARCHAR(60),
-cargo VARCHAR(80),
+cargo VARCHAR(100),
 origem VARCHAR(50), -- nacional / internacional
 eventos VARCHAR(3), -- ??? 
 incentivos VARCHAR(3), -- ???
@@ -205,6 +205,8 @@ datacadastro VARCHAR(20) NOT NULL,
 user VARCHAR(60) NOT NULL,
 PRIMARY KEY (suspectid));
 
+
+-- VERIFICAR QUAL CAMPO DE DATA É USADO
 create view dashboardjaneiro2018 as select count(*) as janeiro from projetos where extract(month from datacadastro)='01' and extract(year from datacadastro)='2018';
 create view dashboardfevereiro2018 as select count(*) as fevereiro from projetos where extract(month from datacadastro)='02' and extract(year from datacadastro)='2018';
 create view dashboardmarco2018 as select count(*) as marco from projetos where extract(month from datacadastro)='03' and extract(year from datacadastro)='2018';
@@ -1057,8 +1059,8 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO DE ENDODONTIA BRASILEIRA - AEB','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIAÇÃO DE MEDICINA INTENSIVA BRASILEIRA - AMIB','','5089-2642','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIAÇÃO DE MEDICINA INTENSIVA BRASILEIRA - AMIB','','5089-2642','','','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO DOMINO'S','','(21) 3956-8600','','','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO DOMINO'S','','(21) 3956-8600','','','','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO DOMINOS','','(21) 3956-8600','','','','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO DOMINOS','','(21) 3956-8600','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO DOS ENGENHEIROS DA SABESP','','(11) 3263-0484','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO PARA ORGANIZACAO DA CONVENCAO','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('ASSOCIACAO PARA ORGANIZACAO DA CONVENCAO','','','','','','','','','', now(),'Paulo Bezerra');
@@ -1323,11 +1325,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CAMPUS I - INDIANOPOLIS','','(11) 5586-4000','','fiscalpaulista@unip.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CAMPUS I - INDIANOPOLIS','','(11) 5586-4000','','fiscalpaulista@unip.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CANAL BRASIL','Janice ','(21) 2145-8466','','janicep@canalbrasil.com.br','','','','','', now(),'Paulo Bezerra');
-"INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CANAL CARTOON NETWORK','Daniela Vieira','(11) 5501-6955 
- 
-','(11) 9648-4142
- 
-','Daniela.Vieira@turner.com','','','','','', now(),'Paulo Bezerra');"
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CANAL CARTOON NETWORK','Daniela Vieira','(11) 5501-6955','(11) 9648-4142','Daniela.Vieira@turner.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CANAL RURAL','Donario Gutheil Lopes de Almeida','996233300','01131377575','donario@canalrural.com.br','Diretor presidente','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CANAL RURAL','Donário Lopes de Almeida','(11) 3882-9102','','donario@canalrural.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('CANAL WOOHOO','Samantha Castro ','(21) 3890-0303','(21) 98197-1122','samantha.castro@woohoo.com.br','','','','','', now(),'Paulo Bezerra');
@@ -2025,7 +2023,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GO PAY','ROBERTO FACCI','(11) 99102-9132','','roberto.facci@gopayment.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOMES DA COSTA','Danielle Fernandez','11 5503-6800','','daniellefernandez@gomesdacosta.com.br','eventos','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOMES DA COSTA','Jarlila Silva ','11 5503-6800 / 11 5503-6854','','jarliliasilva@gomesdacosta.com.br','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOODYEAR','Fábio García','','','fabio_garcia@goodyear.com','Sr. Marketing Manager, Product Performance and Market Intelligence na The Goodyear Tire & Rubber Company','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOODYEAR','Fábio García','','','fabio_garcia@goodyear.com','Sr. Marketing Manager, Product Performance and Market Intelligence','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOOGLE','Talita Salles','(11) 2395-8699 ','(11) 98299-7985','Talitaferreira@google.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOOGLE CLOUD BRAZIL COMPUTACAO E SERVIÇOS DE DADOS LTDA','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('GOOGLE CLOUD BRAZIL COMPUTACAO E SERVIÇOS DE DADOS LTDA','','','','','','','','','', now(),'Paulo Bezerra');
@@ -2254,8 +2252,7 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERNEXA','Nielson da Silva','(11) 2664-3154','(11) 99914-7884','nmelo@internexa.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERPRISE COMERCIO E SERVICOS TECNOLOGICOS LTDA - EPP','','(19) 3833-6816','','mferraro@interprise.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERPRISE COMERCIO E SERVICOS TECNOLOGICOS LTDA - EPP','','(19) 3833-6816','','mferraro@interprise.com.br','','','','','', now(),'Paulo Bezerra');
-"INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERSYSTEMS','Thais Souza','(11) 3014-7012 
-','','thais.sousa@intersystems.com ','','','','','', now(),'Paulo Bezerra');"
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERSYSTEMS','Thais Souza','(11) 3014-7012','','thais.sousa@intersystems.com ','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERSYSTEMS','Gisele Panegassi','(11) 3014-7072','(11) 98952-8318','Gisele.Panegassi@InterSystems.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INTERTEK DO BRASIL INSPECOES LTDA.','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('INVASIVE IMPORTAÇÃO E COMÉRCIO DE PRODUTOS MÉDICOS LTDA','','','','','','','','','', now(),'Paulo Bezerra');
@@ -2430,8 +2427,8 @@ INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, o
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LOGSAUDE C C SUP ALIM LTDA EPP','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LOGUM LOGISTICA S A','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LOGUM LOGISTICA S A','','','','','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('L'OREAL BRASIL','','(21) 2131-6375','','rmotta@br.loreal.com','','','','','', now(),'Paulo Bezerra');
-INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('L'OREAL BRASIL','','(21) 2131-6375','','rmotta@br.loreal.com','','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LOREAL BRASIL','','(21) 2131-6375','','rmotta@br.loreal.com','','','','','', now(),'Paulo Bezerra');
+INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LOREAL BRASIL','','(21) 2131-6375','','rmotta@br.loreal.com','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LOTUS LOCADORA DE VEICULOS LTDA - ME','','(11) 5522-8022','','cperfil@terra.com.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LPR LOCACAO DE BENS MOVEIS S/A','','','','','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('LRTT - LOCACOES AUDIOVISUAIS LTDA.','','(11) 2671-9900','','leo@plenolocacoes.com.br','','','','','', now(),'Paulo Bezerra');

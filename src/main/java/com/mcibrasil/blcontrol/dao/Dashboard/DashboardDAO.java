@@ -36,6 +36,7 @@ public class DashboardDAO {
         int dezembro;
 
         String select = "";
+        String dashboardselect = "";
 
         Conexao bancoconexao = new Conexao();
 
@@ -48,6 +49,9 @@ public class DashboardDAO {
             java.sql.Statement st = conexao.createStatement();
 
             select = "select count(*) as quantidade from projetos where projectstatus = '" + type.toUpperCase() + "'";
+            dashboardselect = "select * from dashboardjaneiro2018, dashboardfevereiro2018, dashboardmarco2018, dashboardabril2018";
+            
+            
             ResultSet result = st.executeQuery(select);
 
             while (result.next()) {

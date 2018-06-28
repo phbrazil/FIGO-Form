@@ -4,7 +4,7 @@ CREATE DATABASE mciprojetos;
 USE mciprojetos;
 
 
-
+-- TABLE CLIENTES
 CREATE TABLE clientes(
 clienteid INT NOT NULL AUTO_INCREMENT, 
 nomecliente VARCHAR(60) NOT NULL,
@@ -23,6 +23,7 @@ datacadastro VARCHAR(20),
 statuscliente BOOLEAN NOT NULL,
 PRIMARY KEY (clienteid, cnpj));
 
+-- TABLE CLIENT MAPPING
 CREATE TABLE clientmapping(
 mappingid INT NOT NULL AUTO_INCREMENT,
 nomecliente VARCHAR(60) NOT NULL,
@@ -44,7 +45,7 @@ PRIMARY KEY (mappingid, nomecliente));
 	
 
 
-
+-- TABLE USUARIOS
 CREATE TABLE usuarios(
 userid INT NOT NULL AUTO_INCREMENT,
 nomecomp VARCHAR(60) NOT NULL,
@@ -54,8 +55,11 @@ password VARCHAR(15) NOT NULL,
 idgrupo INT,
 PRIMARY KEY (userid, email));
 
-INSERT INTO usuarios (nomecomp, area, email, password, idgrupo) values ('teste', 'HUB', 'teste@teste.com','123', 1);
+-- MAPEAR PERMISSOES DE ACESSOS
+INSERT INTO usuarios (nomecomp, area, email, password, idgrupo) values ('Paulo Bezerra', 'HUB', 'teste@teste.com','123', 1);
+INSERT INTO usuarios (nomecomp, area, email, password, idgrupo) values ('Simone Nogueira', 'HUB', 'simone.nogueira@mci-group.com','123', 1);
 
+-- TABLE PROJETOS
 CREATE TABLE projetos(
 projectid INT NOT NULL AUTO_INCREMENT,
 clienteid VARCHAR(60) NOT NULL,
@@ -85,6 +89,7 @@ folderpath varchar(100),
 FOREIGN KEY (userid) REFERENCES usuarios (userid),	
 PRIMARY KEY (projectid, projectname));
 
+-- INSERT PROJETOS
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2018/08/01','TNT','TNT CAMPUS PARTY',1860,'2018/01/29','Past','2018-01-02',0,'vazio',1,'Confirmed','AUDITADO',110940.81,33139,30,33139,1,now(),'10.18.1.10');
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2017/12/31','NATULAB','CAMPANHA DE INCENTIVO 2017',1470,'2017/01/31','Past','2018-04-30',80,'vazio',1,'Confirmed','AUDITADO',0,80704,0,80704,1,now(),'10.18.1.10');
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2017/11/16','SYNGENTA','CONVENÇÃO L&G LATAM 2018',0,'2018/03/14','Past','2018-03-17',60,'vazio',0,'Lost','0',300000,38365,13,0,1,now(),'10.18.1.10');
@@ -170,8 +175,7 @@ INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdclin
 INSERT INTO projetos (clienteid,area, cidade, uf, owner, propreqdate, mcistdcliname, projectname, projectanalcode, eventstartdate, eventstatus, eventclosingdate, paxnumber, cancelinsurance, probability, projectstatus, projectaudit, turnoverforowner, gmforowner, gmturnoverperc, weightedprospec, userid, datacadastro, folderpath) VALUES (1,'HUB','Sao Paulo','SP','paulo.bezerra@mci-group.com','2018/05/22','TITAN PNEUS','CONVENÇÃO',0,'2018/07/11','Future','2018-10-11',94,'vazio',0.25,'Open','0',350000,70000,20,17500,1,now(),'10.18.1.10');
 
 
-
-
+-- CREATE TABLE PROSPECTS 
 CREATE TABLE prospects(
 prospectid INT NOT NULL AUTO_INCREMENT, 
 empresa VARCHAR(100) NOT NULL,
@@ -189,6 +193,7 @@ user VARCHAR(60) NOT NULL,
 PRIMARY KEY (prospectid));
 
 
+-- CREATE TABLE SUSPECTS 
 CREATE TABLE suspects(
 suspectid INT NOT NULL AUTO_INCREMENT, 
 empresa VARCHAR(100) NOT NULL,
@@ -220,11 +225,12 @@ create view dashboardoutubro2018 as select count(*) as outubro from projetos whe
 create view dashboardnovembro2018 as select count(*) as novembro from projetos where extract(month from datacadastro)='11' and extract(year from datacadastro)='2018';
 create view dashboarddezembro2018 as select count(*) as dezembro from projetos where extract(month from datacadastro)='12' and extract(year from datacadastro)='2018';
 
+-- MAIORES CONTATOS DE PROSPECTS 
 create view prospectMaiores as select count(*) as quantidade, empresa from prospects group by empresa order by quantidade desc;
 
 
 
-
+-- INSERT PROSPECTS
 INSERT INTO prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci, datacadastro, user)values('3M','Luiz Eduardo Serafim','19 38386918 ','','leserafim@mmm.com','Head de Marketing Corporativo e Serviços ao Consumidor','Nacional','Sim','','Adriano Zunino', now(),'Paulo Bezerra');
 INSERT INTO prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci, datacadastro, user)values('3M','Carolina M. P. Duarte ','19 38386918 ','19 999897832','cmduarte@mmm.com','Coordenadora de Marketing','Nacional','Sim','','Adriano Zunino', now(),'Paulo Bezerra');
 INSERT INTO prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci, datacadastro, user)values('3M','Cintia Salla','19 3838-7469','','csalla@mmm.com','Compras Eventos','Nacional','Sim','','Adriano Zunino', now(),'Paulo Bezerra');
@@ -775,6 +781,8 @@ INSERT INTO prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, 
 INSERT INTO prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci, datacadastro, user)values('XP INVESTIMENTOS','Eduardo Fasano','3526-0248','','eduardo.fasano@xpi.com.br','Corporate Access','','','','', now(),'Paulo Bezerra');
 INSERT INTO prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci, datacadastro, user)values('ZURICH BRASIL SEGUROS','RAFAEL LANZA','','','tom.latam@br.zurich.com','Gerente de Eventos','','','','-', now(),'Paulo Bezerra');
 
+
+-- INSERT SUSPECTS
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('123 VIAGENS E TURISMO LTDA.','','(31) 3244-2277','','mario@tavernard.adv.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('123 VIAGENS E TURISMO LTDA.','','(31) 3244-2277','','mario@tavernard.adv.br','','','','','', now(),'Paulo Bezerra');
 INSERT INTO suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, datacadastro, user)values('2 CALL MOBILE','Roberto','(11) 2532-7710','','roberto@2call.com.br','','','','','', now(),'Paulo Bezerra');

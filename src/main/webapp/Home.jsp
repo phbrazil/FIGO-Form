@@ -34,7 +34,7 @@
         <div align ="center">
             <img class="mb-4" src="img/mci_logo.png" alt="logo MCI" width="200" height="200">
             <h1 class="mb-0">Olá
-                <span class="text-primary"><c:out value="${username}"/></span>
+                <span class="text-primary"><c:out value="${nomecomp}"/></span>
             </h1>
 
 

@@ -42,6 +42,7 @@ public class LoginServlet extends HttpServlet {
 
             HttpSession sessao = request.getSession();
             sessao.setAttribute("username", logindados.getUserName());
+            sessao.setAttribute("nomecomp", logindados.getNomeUser());
 
             acessopermitido = false;
             request.getRequestDispatcher("Home.jsp").forward(request, response);

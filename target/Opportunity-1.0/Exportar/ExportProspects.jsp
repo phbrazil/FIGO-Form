@@ -3,6 +3,8 @@
     Author     : paulo.bezerra
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,7 +14,7 @@
         <title>Export</title>
     </head>
     <body>
-        <h1>Report Prospects</h1>
+        <h1>Listagem de Prospects</h1>
 
         <table>
             <tr>
@@ -33,6 +35,8 @@
             <%
 
                 ResultSet prospects = (ResultSet) request.getAttribute("prospects");
+
+                String dataatual = new SimpleDateFormat("yyyy-MM-dd_hh:mm:ss").format(Calendar.getInstance().getTime());
 
                 while (prospects.next()) {
 
@@ -55,7 +59,7 @@
             </tr>   
             <%
                     response.setContentType("application/vnd.ms-excel");
-                    response.setHeader("Content-Disposition", "inline; filename=" + "ProspectsReport.xls");
+                    response.setHeader("Content-Disposition", "inline; filename=" + "ProspectsReport"+dataatual+".xls");
 
                 }
 

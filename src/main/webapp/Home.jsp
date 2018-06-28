@@ -20,8 +20,6 @@
         <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <!--link href="css/homepage.css" rel="stylesheet"-->
     </head>
     <body id="page-top">
 
@@ -42,8 +40,6 @@
                     <a href ="Dashboard?type=Confirmed" style="text-decoration:none;">Access the Quick Dashboard</a>
                 </div>
             </div>
-
-        <!--p class="mb-1">Sessão ${idsessao}</p-->
 
         </div>
 

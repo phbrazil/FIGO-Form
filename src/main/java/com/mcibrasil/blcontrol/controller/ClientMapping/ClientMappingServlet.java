@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,10 +31,12 @@ public class ClientMappingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession sessao = request.getSession(true);
+
         String nomecliente = request.getParameter("nomecliente");
         String businessmanager = request.getParameter("businessmanager");
         String accountmanager = request.getParameter("accountmanager");
-        String creator = "Paulo Bezerra";
+        String creator = (String) sessao.getAttribute("username");
         float questao1 = Float.valueOf(request.getParameter("questao1"));
         int questao2 = Integer.valueOf(request.getParameter("questao2"));
         String questao3 = request.getParameter("questao3");
@@ -49,13 +52,13 @@ public class ClientMappingServlet extends HttpServlet {
         ClientMapping clientmapping = new ClientMapping(nomecliente, businessmanager, accountmanager, creator, questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10, questao11);
 
         com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO gravarproposta = new com.mcibrasil.blcontrol.dao.ClientMapping.ClientMappingDAO();
-   
+
         gravarproposta.GravarClientMapping(clientmapping);
 
         clientmapping = null;
-        
+
         request.setAttribute("mensagem", "Client Mapping Cadastrado");
-        
+
         request.getRequestDispatcher("CadastrarClientMapping.jsp").forward(request, response);
 
     }

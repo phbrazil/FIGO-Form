@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,6 +32,8 @@ public class SuspectsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession sessao = request.getSession(true);
+
         String empresa = request.getParameter("empresa");
         String nomecontato = request.getParameter("nomecontato");
         String telefone1 = request.getParameter("telefone1");
@@ -41,8 +44,9 @@ public class SuspectsServlet extends HttpServlet {
         String eventos = request.getParameter("eventos");
         String incentivos = request.getParameter("incentivos");
         String contatomci = request.getParameter("contatomci");
+        String username = (String) sessao.getAttribute("username");
 
-        Suspects suspects = new Suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci);
+        Suspects suspects = new Suspects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, eventos, incentivos, contatomci, username);
         
         SuspectsDAO gravarsuspect = new SuspectsDAO();
 

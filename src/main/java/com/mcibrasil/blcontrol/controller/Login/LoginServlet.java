@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,10 +40,11 @@ public class LoginServlet extends HttpServlet {
 
         if (acessopermitido == true) {
 
-            request.setAttribute("NomeDoUser", logindados.getNomeUser());
+            HttpSession sessao = request.getSession();
+            sessao.setAttribute("username", logindados.getUserName());
+
             acessopermitido = false;
             request.getRequestDispatcher("Home.jsp").forward(request, response);
-            
 
         } else {
 

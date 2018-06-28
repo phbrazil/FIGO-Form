@@ -32,7 +32,7 @@ public class ProspectsDAO {
             conexao = bancoconexao.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            selectgeral = "select * from prospects order by empresa";
+            selectgeral = "select * from prospects order by datacadastro desc";
             ResultSet resultgeral = st.executeQuery(selectgeral);
 
             if (resultgeral != null) {
@@ -88,7 +88,9 @@ public class ProspectsDAO {
 
             String query = ("INSERT INTO prospects (empresa, nomecontato,telefone1,"
                     + "telefone2, email,cargo, origem, hub, travel, contatomci, datacadastro,user)"
-                    + " VALUES (?,?,?,?,?,?,?,?,?,?,now(),'paulo bezerra')");
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?,now(),?)");
+            
+            System.out.println("entrei aqui");
 
             PreparedStatement preparedStmt = conexao.prepareStatement(query);
             preparedStmt.setString(1, prospects.getEmpresa());
@@ -101,6 +103,7 @@ public class ProspectsDAO {
             preparedStmt.setString(8, prospects.getHub());
             preparedStmt.setString(9, prospects.getTravel());
             preparedStmt.setString(10, prospects.getContatomci());
+            preparedStmt.setString(11, prospects.getUser());
 
             preparedStmt.execute();
 

@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,6 +32,8 @@ public class ProspectsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession sessao = request.getSession(true);
+
         String empresa = request.getParameter("empresa");
         String nomecontato = request.getParameter("nomecontato");
         String telefone1 = request.getParameter("telefone1");
@@ -41,8 +44,10 @@ public class ProspectsServlet extends HttpServlet {
         String hub = request.getParameter("hub");
         String travel = request.getParameter("travel");
         String contatomci = request.getParameter("contatomci");
-
-        Prospects prospects = new Prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci);
+        String username = (String) sessao.getAttribute("username");
+        
+        System.out.println(username+ " aqui");
+        Prospects prospects = new Prospects(empresa, nomecontato, telefone1, telefone2, email, cargo, origem, hub, travel, contatomci, username);
 
         ProspectsDAO gravarprospect = new ProspectsDAO();
 

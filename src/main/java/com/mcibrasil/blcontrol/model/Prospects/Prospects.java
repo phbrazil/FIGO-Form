@@ -22,8 +22,9 @@ public class Prospects {
     private String hub;
     private String travel;
     private String contatomci;
+    private String user;
 
-    public Prospects(String empresa, String nomecontato, String telefone1, String telefone2, String email, String cargo, String origem, String hub, String travel, String contatomci) {
+    public Prospects(String empresa, String nomecontato, String telefone1, String telefone2, String email, String cargo, String origem, String hub, String travel, String contatomci, String user) {
         this.empresa = empresa;
         this.nomecontato = nomecontato;
         this.telefone1 = telefone1;
@@ -34,6 +35,15 @@ public class Prospects {
         this.hub = hub;
         this.travel = travel;
         this.contatomci = contatomci;
+        this.user = user;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getEmpresa() {

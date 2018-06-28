@@ -218,7 +218,7 @@ create view dashboardoutubro2018 as select count(*) as outubro from projetos whe
 create view dashboardnovembro2018 as select count(*) as novembro from projetos where extract(month from datacadastro)='11' and extract(year from datacadastro)='2018';
 create view dashboarddezembro2018 as select count(*) as dezembro from projetos where extract(month from datacadastro)='12' and extract(year from datacadastro)='2018';
 
-create view prospectMaiores as select count(*) as quantidade, empresa from prospects group by empresa;
+create view prospectMaiores as select count(*) as quantidade, empresa from prospects group by empresa order by quantidade desc;
 
 
 

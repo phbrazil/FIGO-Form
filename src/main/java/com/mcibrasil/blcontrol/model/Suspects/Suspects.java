@@ -24,8 +24,17 @@ public class Suspects {
     private String eventos;
     private String incentivos;
     private String contatomci;
+    private String user;
 
-    public Suspects(String empresa, String nomecontato, String telefone1, String telefone2, String email, String cargo, String origem, String eventos, String incentivos, String contatomci) {
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public Suspects(String empresa, String nomecontato, String telefone1, String telefone2, String email, String cargo, String origem, String eventos, String incentivos, String contatomci,String user) {
         this.empresa = empresa;
         this.nomecontato = nomecontato;
         this.telefone1 = telefone1;
@@ -36,6 +45,7 @@ public class Suspects {
         this.eventos = eventos;
         this.incentivos = incentivos;
         this.contatomci = contatomci;
+        this.user = user;
     }
 
     public String getEmpresa() {

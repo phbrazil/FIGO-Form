@@ -88,7 +88,7 @@ public class SuspectsDAO {
 
             String query = ("INSERT INTO suspects (empresa, nomecontato,telefone1,"
                     + "telefone2, email,cargo, origem, eventos, incentivos, contatomci, datacadastro,user)"
-                    + " VALUES (?,?,?,?,?,?,?,?,?,?,now(),'paulo bezerra')");
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?,now(),?)");
 
             PreparedStatement preparedStmt = conexao.prepareStatement(query);
             preparedStmt.setString(1, suspects.getEmpresa());
@@ -101,6 +101,7 @@ public class SuspectsDAO {
             preparedStmt.setString(8, suspects.getEventos());
             preparedStmt.setString(9, suspects.getIncentivos());
             preparedStmt.setString(10, suspects.getContatomci());
+            preparedStmt.setString(11, suspects.getUser());
 
             preparedStmt.execute();
 
